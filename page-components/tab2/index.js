@@ -8,18 +8,38 @@ import {
 	IonButton,
 } from '@ionic/react';
 
+import {
+	StyledMenuButton,
+	StyledMenuTitle,
+} from './styles';
+
 function Tab2Page() {
 	return (
 		<IonPage>
 			<IonHeader translucent={true}>
 				<IonToolbar>
 					<IonButtons slot="start">
-						<IonButton> Start 1 </IonButton>
-						<IonButton> Start 2 </IonButton>
+						<IonButton>
+							<StyledMenuButton
+								onClick={() => {
+									console.log('Click D');
+								}}
+							>
+								D
+							</StyledMenuButton>
+						</IonButton>
+
+						<IonButton onClick={() => {
+							console.log('Click Start 2');
+						}}>
+							Start 2
+						</IonButton>
 					</IonButtons>
 
 					<IonTitle>
-						<button>This is title</button>
+						<StyledMenuTitle>
+							This is title
+						</StyledMenuTitle>
 					</IonTitle>
 
 					<IonButtons slot="end">

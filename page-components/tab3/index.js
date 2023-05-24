@@ -2,25 +2,23 @@ import {
 	IonContent,
 	IonHeader,
 	IonPage,
-	IonTitle,
-	IonToolbar
 } from '@ionic/react';
 
-function Tab1Page() {
+import {
+	StyledMenuTitle,
+} from './styles';
+
+function Tab3Page() {
 	return (
 		<IonPage>
+			{/* NOTE: IonHeader 可以固定 Header 在 page 的最上面 */}
 			<IonHeader>
-				<IonToolbar>
-					<IonTitle>Tab 1</IonTitle>
-				</IonToolbar>
+				<StyledMenuTitle>
+					Tab3Page
+				</StyledMenuTitle>
 			</IonHeader>
-			<IonContent fullscreen>
-				<IonHeader collapse="condense">
-					<IonToolbar>
-						<IonTitle size="large">Tab 12323</IonTitle>
-					</IonToolbar>
-				</IonHeader>
 
+			<IonContent fullscreen>
 				<h1>Test top</h1>
 				<h1>Test</h1>
 				<h1>Test</h1>
@@ -43,4 +41,4 @@ function Tab1Page() {
 	);
 }
 
-export default Tab1Page;
+export default Tab3Page;
