@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 
 import {
@@ -14,6 +15,10 @@ import {
 	IonFab,
 	IonFabButton,
 	IonIcon,
+	useIonViewDidEnter,
+	useIonViewDidLeave,
+	useIonViewWillEnter,
+	useIonViewWillLeave,
 } from '@ionic/react';
 import {
 	camera,
@@ -28,6 +33,31 @@ import {
 
 function Tab2Page() {
 	const { takePhoto, } = usePhotoGallery();
+
+	useEffect(() => {
+		console.log('Tab2Page didMount');
+
+		return () => {
+			console.log('Tab2Page unMount');
+		};
+
+	}, []);
+
+	useIonViewDidEnter(() => {
+		console.log('ionViewDidEnter event fired');
+	});
+
+	useIonViewDidLeave(() => {
+		console.log('ionViewDidLeave event fired');
+	});
+
+	useIonViewWillEnter(() => {
+		console.log('ionViewWillEnter event fired');
+	});
+
+	useIonViewWillLeave(() => {
+		console.log('ionViewWillLeave event fired');
+	});
 
 	return (
 		<IonPage>
