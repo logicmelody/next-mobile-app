@@ -78,7 +78,8 @@ function Tab2Page() {
 				<IonFab vertical='bottom' horizontal='end' slot='fixed'>
 					<IonFabButton
 						onClick={() => {
-							takePhoto();
+							// takePhoto();
+							console.log('Take photo');
 						}}
 					>
 						<IonIcon icon={camera}></IonIcon>
