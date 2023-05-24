@@ -2,6 +2,7 @@ import {
 	IonContent,
 	IonHeader,
 	IonPage,
+	IonToolbar,
 } from '@ionic/react';
 
 import {
@@ -17,6 +18,14 @@ function Tab3Page() {
 					Tab3Page
 				</StyledMenuTitle>
 			</IonHeader>
+
+			{/* <IonHeader>
+				<IonToolbar>
+					<StyledMenuTitle>
+						Tab3Page
+					</StyledMenuTitle>
+				</IonToolbar>
+			</IonHeader> */}
 
 			<IonContent fullscreen>
 				<h1>Test top</h1>
