@@ -9,7 +9,17 @@ import {
 	IonButton,
 	IonSearchbar,
 	IonProgressBar,
+	IonFab,
+	IonFabButton,
+	IonIcon,
 } from '@ionic/react';
+import {
+	camera,
+	trash,
+	close,
+	ellipse,
+	triangle,
+} from 'ionicons/icons';
 
 import {
 	StyledMenuButton,
@@ -60,9 +70,15 @@ function Tab2Page() {
 					<IonSearchbar />
 				</IonToolbar>
 
-				<IonProgressBar type="indeterminate"></IonProgressBar>
+				<IonProgressBar type='indeterminate'></IonProgressBar>
 			</IonHeader>
 			<IonContent fullscreen>
+				<IonFab vertical='bottom' horizontal='end' slot='fixed'>
+					<IonFabButton onClick={() => { }}>
+						<IonIcon icon={camera}></IonIcon>
+					</IonFabButton>
+				</IonFab>
+
 				<h1>Test top</h1>
 				<h1>Test</h1>
 				<h1>Test</h1>

@@ -9,7 +9,10 @@ import {
 	IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, triangle } from 'ionicons/icons';
+import {
+	ellipse,
+	triangle,
+} from 'ionicons/icons';
 
 import Tab1 from '../page-components/tab1';
 import Tab2 from '../page-components/tab2';
