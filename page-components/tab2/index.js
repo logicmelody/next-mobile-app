@@ -2,10 +2,12 @@ import {
 	IonContent,
 	IonHeader,
 	IonPage,
+	IonFooter,
 	IonTitle,
 	IonToolbar,
 	IonButtons,
 	IonButton,
+	IonSearchbar,
 } from '@ionic/react';
 
 import {
@@ -16,9 +18,14 @@ import {
 function Tab2Page() {
 	return (
 		<IonPage>
-			<IonHeader translucent={true}>
+			<IonHeader
+				translucent
+				className='ion-no-border'
+				collapse='fade'
+			>
+				{/* // NOTE: 如果放在 IonHeader 或是 IonFooter，位置會被固定，如果放在 IonContent 中，會跟著 page scoll */}
 				<IonToolbar>
-					<IonButtons slot="start">
+					<IonButtons slot='start'>
 						<IonButton>
 							<StyledMenuButton
 								onClick={() => {
@@ -36,20 +43,47 @@ function Tab2Page() {
 						</IonButton>
 					</IonButtons>
 
-					<IonTitle>
+					<IonTitle slot='center'>
 						<StyledMenuTitle>
 							This is title
 						</StyledMenuTitle>
 					</IonTitle>
 
-					<IonButtons slot="end">
+					<IonButtons slot='end'>
 						<IonButton> end 1 </IonButton>
 						<IonButton> end 2 </IonButton>
 					</IonButtons>
 				</IonToolbar>
+
+				<IonToolbar>
+					<IonSearchbar />
+				</IonToolbar>
 			</IonHeader>
 			<IonContent fullscreen>
+				<h1>Test top</h1>
+				<h1>Test</h1>
+				<h1>Test</h1>
+				<h1>Test</h1>
+				<h1>Test</h1>
+				<h1>Test</h1>
+				<h1>Test</h1>
+				<h1>Test</h1>
+				<h1>Test</h1>
+				<h1>Test</h1>
+				<h1>Test</h1>
+				<h1>Test</h1>
+				<h1>Test</h1>
+				<h1>Test</h1>
+				<h1>Test</h1>
+				<h1>Test</h1>
+				<h1>Test</h1>
 			</IonContent>
+
+			<IonFooter>
+				<IonToolbar>
+					<IonTitle>Footer Toolbar</IonTitle>
+				</IonToolbar>
+			</IonFooter>
 		</IonPage>
 	);
 }
