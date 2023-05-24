@@ -1,3 +1,5 @@
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+
 import {
 	IonContent,
 	IonHeader,
@@ -15,11 +17,9 @@ import {
 } from '@ionic/react';
 import {
 	camera,
-	trash,
-	close,
-	ellipse,
-	triangle,
 } from 'ionicons/icons';
+
+import { usePhotoGallery } from './use-photo-gallery';
 
 import {
 	StyledMenuButton,
@@ -27,6 +27,8 @@ import {
 } from './styles';
 
 function Tab2Page() {
+	const { takePhoto, } = usePhotoGallery();
+
 	return (
 		<IonPage>
 			<IonHeader
@@ -74,7 +76,11 @@ function Tab2Page() {
 			</IonHeader>
 			<IonContent fullscreen>
 				<IonFab vertical='bottom' horizontal='end' slot='fixed'>
-					<IonFabButton onClick={() => { }}>
+					<IonFabButton
+						onClick={() => {
+							takePhoto();
+						}}
+					>
 						<IonIcon icon={camera}></IonIcon>
 					</IonFabButton>
 				</IonFab>
