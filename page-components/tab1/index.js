@@ -13,15 +13,16 @@ function Tab1Page() {
 	return (
 		<IonPage>
 			<IonHeader>
-				{/* <IonToolbar>
+				<IonToolbar>
 					<IonTitle>Tab 1</IonTitle>
-				</IonToolbar> */}
+				</IonToolbar>
 				
 				<IonToolbar>
 					<IonSegment value="all">
 						<IonSegmentButton value="all">
 							<IonLabel>All</IonLabel>
 						</IonSegmentButton>
+
 						<IonSegmentButton value="favorites">
 							<IonLabel>Favorites</IonLabel>
 						</IonSegmentButton>

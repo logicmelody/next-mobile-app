@@ -8,6 +8,7 @@ import {
 	IonButtons,
 	IonButton,
 	IonSearchbar,
+	IonProgressBar,
 } from '@ionic/react';
 
 import {
@@ -26,15 +27,13 @@ function Tab2Page() {
 				{/* // NOTE: 如果放在 IonHeader 或是 IonFooter，位置會被固定，如果放在 IonContent 中，會跟著 page scoll */}
 				<IonToolbar>
 					<IonButtons slot='start'>
-						<IonButton>
-							<StyledMenuButton
-								onClick={() => {
-									console.log('Click D');
-								}}
-							>
-								D
-							</StyledMenuButton>
-						</IonButton>
+						<StyledMenuButton
+							onClick={() => {
+								console.log('Click D');
+							}}
+						>
+							D
+						</StyledMenuButton>
 
 						<IonButton onClick={() => {
 							console.log('Click Start 2');
@@ -43,11 +42,13 @@ function Tab2Page() {
 						</IonButton>
 					</IonButtons>
 
-					<IonTitle slot='center'>
-						<StyledMenuTitle>
+					<StyledMenuTitle>
+						<IonButton onClick={() => {
+							console.log('Click title');
+						}}>
 							This is title
-						</StyledMenuTitle>
-					</IonTitle>
+						</IonButton>
+					</StyledMenuTitle>
 
 					<IonButtons slot='end'>
 						<IonButton> end 1 </IonButton>
@@ -58,6 +59,8 @@ function Tab2Page() {
 				<IonToolbar>
 					<IonSearchbar />
 				</IonToolbar>
+
+				<IonProgressBar type="indeterminate"></IonProgressBar>
 			</IonHeader>
 			<IonContent fullscreen>
 				<h1>Test top</h1>

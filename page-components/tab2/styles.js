@@ -16,8 +16,6 @@ export const StyledMenuTitle = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 30px;
-	height: 30px;
 	border: 1px solid yellow;
 	border-radius: 10px;
 	color: white;
