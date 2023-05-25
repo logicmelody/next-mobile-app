@@ -3,6 +3,8 @@ import {
 	IonHeader,
 	IonPage,
 	IonToolbar,
+	IonItem,
+	IonLabel,
 } from '@ionic/react';
 
 import {
@@ -28,6 +30,18 @@ function Tab3Page() {
 			</IonHeader> */}
 
 			<IonContent fullscreen>
+				<IonItem routerLink='/settings'>
+					<IonLabel>
+						Go to Lottery
+					</IonLabel>
+				</IonItem>
+
+				<IonItem routerLink='/settings'>
+					<IonLabel>
+						Go to Settings
+					</IonLabel>
+				</IonItem>
+
 				<h1>Test top</h1>
 				<h1>Test</h1>
 				<h1>Test</h1>

@@ -19,6 +19,7 @@ import {
 import Tab1 from '../page-components/tab1';
 import Tab2 from '../page-components/tab2';
 import Tab3 from '../page-components/tab3';
+import Settings from '../page-components/settings';
 
 function Home() {
 	useEffect(() => {
@@ -34,6 +35,7 @@ function Home() {
 		<IonApp>
 			<IonReactRouter>
 				<IonTabs>
+					{/* An IonRouterOutlet should only contain Routes or Redirects. */}
 					<IonRouterOutlet>
 						<Route exact path='/tab1'>
 							<Tab1 />
@@ -47,9 +49,18 @@ function Home() {
 							<Tab3 />
 						</Route>
 
+						<Route exact path='/settings'>
+							<Settings />
+						</Route>
+
 						<Route exact path='/'>
 							<Redirect to='/tab1' />
 						</Route>
+
+						{/* A common routing use case is to provide a "fallback" route to be rendered in the event the location navigated to does not match any of the routes defined. */}
+						{/* <Route
+							render={() => <Redirect to='/tab1' />}
+						/> */}
 
 						{/* <Route
 							exact
