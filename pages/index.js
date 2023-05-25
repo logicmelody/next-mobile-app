@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import {
 	IonApp,
@@ -20,6 +21,15 @@ import Tab2 from '../page-components/tab2';
 import Tab3 from '../page-components/tab3';
 
 function Home() {
+	useEffect(() => {
+		console.log(`Home didMount`);
+
+		return () => {
+			console.log(`Home unMount`);
+		};
+
+	}, []);
+
 	return (
 		<IonApp>
 			<IonReactRouter>
