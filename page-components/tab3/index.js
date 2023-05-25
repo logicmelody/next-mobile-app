@@ -6,15 +6,16 @@ import {
 	IonItem,
 	IonLabel,
 	IonButton,
+	useIonRouter,
 } from '@ionic/react';
 
 import {
 	StyledMenuTitle,
 } from './styles';
 
-function Tab3Page({
-	history,
-}) {
+function Tab3Page() {
+	const router = useIonRouter();
+
 	return (
 		<IonPage>
 			{/* NOTE: IonHeader 可以固定 Header 在 page 的最上面 */}
@@ -43,7 +44,7 @@ function Tab3Page({
 				</IonItem>
 
 				<IonButton onClick={() => {
-					history.push('/settings');
+					router.push('/settings');
 				}}>
 					Go to Settings
 				</IonButton>
