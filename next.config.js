@@ -8,8 +8,10 @@ const nextConfig = {
 		'ionicons'
 	],
 
-	// NOTE: https://github.com/ionic-team/ionic-framework/issues/27265
-	reactStrictMode: false,
+	// NOTE:
+	// https://github.com/ionic-team/ionic-framework/issues/27265
+	// https://react.dev/learn/synchronizing-with-effects#how-to-handle-the-effect-firing-twice-in-development
+	reactStrictMode: true,
 	images: {
 		unoptimized: true
 	}
