@@ -6,6 +6,8 @@ import {
 	IonPage,
 	IonTitle,
 	IonToolbar,
+	IonButtons,
+	IonBackButton,
 	useIonViewDidEnter,
 	useIonViewDidLeave,
 	useIonViewWillEnter,
@@ -48,6 +50,10 @@ function SettingsPage() {
 		<IonPage>
 			<IonHeader>
 				<IonToolbar>
+					<IonButtons slot='start'>
+						<IonBackButton />
+					</IonButtons>
+
 					<IonTitle>Settings</IonTitle>
 				</IonToolbar>
 			</IonHeader>

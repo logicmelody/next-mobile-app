@@ -8,7 +8,9 @@ import {
 	IonSegment,
 	IonSegmentButton,
 	IonLabel,
+	IonButtons,
 	IonButton,
+	IonBackButton,
 } from '@ionic/react';
 
 function Tab1Page() {
@@ -27,6 +29,10 @@ function Tab1Page() {
 		<IonPage>
 			<IonHeader>
 				<IonToolbar>
+					<IonButtons slot='start'>
+						<IonBackButton />
+					</IonButtons>
+
 					<IonTitle>Tab 1</IonTitle>
 				</IonToolbar>
 				
