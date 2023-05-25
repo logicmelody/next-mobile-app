@@ -11,7 +11,7 @@ const nextConfig = {
 	// NOTE:
 	// https://github.com/ionic-team/ionic-framework/issues/27265
 	// https://react.dev/learn/synchronizing-with-effects#how-to-handle-the-effect-firing-twice-in-development
-	reactStrictMode: true,
+	reactStrictMode: false,
 	images: {
 		unoptimized: true
 	}
