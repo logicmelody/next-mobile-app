@@ -38,9 +38,11 @@ function Home() {
 						<Route exact path='/tab1'>
 							<Tab1 />
 						</Route>
+
 						<Route exact path='/tab2'>
 							<Tab2 />
 						</Route>
+
 						<Route exact path='/tab3'>
 							<Tab3 />
 						</Route>
@@ -48,6 +50,14 @@ function Home() {
 						<Route exact path='/'>
 							<Redirect to='/tab1' />
 						</Route>
+
+						{/* <Route
+							exact
+							path="/dashboard"
+							render={(props) => {
+								return isAuthed ? <DashboardPage {...props} /> : <LoginPage />;
+							}}
+						/> */}
 					</IonRouterOutlet>
 
 					<IonTabBar slot='bottom'>
