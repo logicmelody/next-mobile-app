@@ -53,23 +53,23 @@ function Tab2Page() {
 	useIonViewWillEnter(() => {
 		// it's a good method to load data from services.
 
-		console.log('ionViewWillEnter event fired');
+		console.log('Tab2Page ionViewWillEnter event fired');
 	});
 
 	useIonViewDidEnter(() => {
 		// This event won't fire until after the page is visible to the user.
 
-		console.log('ionViewDidEnter event fired');
+		console.log('Tab2Page ionViewDidEnter event fired');
 	});
 
 	useIonViewWillLeave(() => {
 		// Can be used for cleanup, like unsubscribing from data sources.
 
-		console.log('ionViewWillLeave event fired');
+		console.log('Tab2Page ionViewWillLeave event fired');
 	});
 
 	useIonViewDidLeave(() => {
-		console.log('ionViewDidLeave event fired');
+		console.log('Tab2Page ionViewDidLeave event fired');
 	});
 
 	return (
