@@ -7,7 +7,9 @@ const nextConfig = {
 		'@stencil/core',
 		'ionicons'
 	],
-	reactStrictMode: true,
+
+	// NOTE: https://github.com/ionic-team/ionic-framework/issues/27265
+	reactStrictMode: false,
 	images: {
 		unoptimized: true
 	}
