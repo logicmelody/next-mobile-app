@@ -31,6 +31,13 @@ import {
 	StyledMenuTitle,
 } from './styles';
 
+/*
+componentDidMount 執行過後，就算 navigate 到別的 page，mount 的 component 還是會存在，所以需要有 lifecyle methods 來通知我們 page 現在是不是在畫面上
+
+React LifeCycle Methods​
+
+All the lifecycle methods in React (componentDidMount, componentWillUnmount, etc..) are available for you to use as well. However, since Ionic React manages the lifetime of a page, certain events might not fire when you expect them to. For instance, componentDidMount fires the first time a page is displayed, but if you navigate away from the page Ionic might keep the page around in the DOM, and a subsequent visit to the page might not call componentDidMount again. This scenario is the main reason the Ionic lifecycle methods exist, to still give you a way to call logic when views enter and exit when the native framework's events might not fire.
+*/
 function Tab2Page() {
 	const { takePhoto, } = usePhotoGallery();
 
