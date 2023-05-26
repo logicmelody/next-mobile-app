@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
 	IonContent,
 	IonHeader,
@@ -15,6 +16,8 @@ import {
 
 function Tab3Page() {
 	const router = useIonRouter();
+
+	const [count, setCount] = useState(0);
 
 	console.log('Tab3Page router', router);
 
@@ -50,7 +53,14 @@ function Tab3Page() {
 					Go to Settings
 				</IonButton>
 
-				<h1>Test top</h1>
+				<h1>{count}</h1>
+
+				<IonButton onClick={() => {
+					setCount(count + 1);
+				}}>
+					Add count
+				</IonButton>
+
 				<h1>Test</h1>
 				<h1>Test</h1>
 				<h1>Test</h1>
@@ -67,6 +77,12 @@ function Tab3Page() {
 				<h1>Test</h1>
 				<h1>Test</h1>
 				<h1>Test</h1>
+
+				<IonButton onClick={() => {
+					router.push('/settings');
+				}}>
+					Go to Settings
+				</IonButton>
 			</IonContent>
 		</IonPage>
 	);
