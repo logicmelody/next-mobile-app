@@ -36,10 +36,9 @@ function Tab3Page() {
 			<IonContent fullscreen>
 				<IonItem
 					routerLink='/settings'
-					// routerDirection='back'
 				>
 					<IonLabel>
-						Go to Lottery
+						Go to Settings
 					</IonLabel>
 				</IonItem>
 

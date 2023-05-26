@@ -7,9 +7,9 @@ import {
 	IonTabBar,
 	IonTabButton,
 	IonTabs,
+	IonButton,
 } from '@ionic/react';
 import {
-	images,
 	triangle,
 	square,
 } from 'ionicons/icons';
@@ -69,8 +69,7 @@ function Tabs() {
 				</IonTabButton>
 
 				<IonTabButton tab='tab2' href={`/tabs/tab2`}>
-					<IonIcon aria-hidden='true' icon={images} />
-					<IonLabel>Tab 2</IonLabel>
+					<IonButton>Tab 2</IonButton>
 				</IonTabButton>
 
 				<IonTabButton tab='tab3' href={`/tabs/tab3`}>
