@@ -16,6 +16,8 @@ import {
 function Tab3Page() {
 	const router = useIonRouter();
 
+	console.log('Tab3Page router', router);
+
 	return (
 		<IonPage>
 			{/* NOTE: IonHeader 可以固定 Header 在 page 的最上面 */}

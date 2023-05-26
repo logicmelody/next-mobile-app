@@ -8,17 +8,22 @@ import {
 	IonTabButton,
 	IonTabs,
 	IonButton,
+	useIonRouter,
 } from '@ionic/react';
 import {
 	triangle,
 	square,
 } from 'ionicons/icons';
 
-import Tab1 from './tab1';
-import Tab2 from './tab2';
-import Tab3 from './tab3';
+import Tab1 from '../tab1';
+import Tab2 from '../tab2';
+import Tab3 from '../tab3';
 
 function Tabs() {
+	const router = useIonRouter();
+
+	const pathname = router.routeInfo.pathname;
+
 	useEffect(() => {
 		console.log(`Tabs didMount`);
 
@@ -65,16 +70,22 @@ function Tabs() {
 			<IonTabBar slot='bottom'>
 				<IonTabButton tab='tab1' href={`/tabs/tab1`}>
 					<IonIcon aria-hidden='true' icon={triangle} />
-					<IonLabel>Tab 1</IonLabel>
+					<IonLabel>
+						Tab 1 {'/tabs/tab1' === pathname ? 'Selected' : ''}
+					</IonLabel>
 				</IonTabButton>
 
 				<IonTabButton tab='tab2' href={`/tabs/tab2`}>
-					<IonButton>Tab 2</IonButton>
+					<IonButton>
+						Tab 2 {'/tabs/tab2' === pathname ? 'Selected' : ''}
+					</IonButton>
 				</IonTabButton>
 
 				<IonTabButton tab='tab3' href={`/tabs/tab3`}>
 					<IonIcon aria-hidden='true' icon={square} />
-					<IonLabel>Tab 3</IonLabel>
+					<IonLabel>
+						Tab 3 {'/tabs/tab3' === pathname ? 'Selected' : ''}
+					</IonLabel>
 				</IonTabButton>
 			</IonTabBar>
 		</IonTabs>
