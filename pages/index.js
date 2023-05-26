@@ -25,7 +25,7 @@ function Home() {
 				{/* An IonRouterOutlet should only contain Routes or Redirects. */}
 				<IonRouterOutlet>
 					<Route exact path='/'>
-						<Redirect to='/Tabs' />
+						<Redirect to='/tabs' />
 					</Route>
 
 					<Route path='/tabs'>
