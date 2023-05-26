@@ -32,15 +32,15 @@ function Tabs() {
 		<IonTabs>
 			{/* An IonRouterOutlet should only contain Routes or Redirects. */}
 			<IonRouterOutlet>
-				<Route exact path={`/tabs/tab1`}>
+				<Route path={`/tabs/tab1`}>
 					<Tab1 />
 				</Route>
 
-				<Route exact path={`/tabs/tab2`}>
+				<Route path={`/tabs/tab2`}>
 					<Tab2 />
 				</Route>
 
-				<Route exact path={`/tabs/tab3`}>
+				<Route path={`/tabs/tab3`}>
 					<Tab3 />
 				</Route>
 
