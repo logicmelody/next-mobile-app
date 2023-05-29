@@ -3,7 +3,6 @@ import {
 	IonContent,
 	IonHeader,
 	IonPage,
-	IonToolbar,
 	IonItem,
 	IonLabel,
 	IonButton,
@@ -13,6 +12,12 @@ import {
 import {
 	StyledMenuTitle,
 } from './styles';
+
+import { NavigationKeyEnums } from '../../navigation';
+
+const {
+	SETTINGS,
+} = NavigationKeyEnums;
 
 function Tab3Page() {
 	const router = useIonRouter();
@@ -40,7 +45,7 @@ function Tab3Page() {
 
 			<IonContent fullscreen>
 				<IonItem
-					routerLink='/settings'
+					routerLink={SETTINGS}
 				>
 					<IonLabel>
 						Go to Settings
@@ -48,7 +53,7 @@ function Tab3Page() {
 				</IonItem>
 
 				<IonButton onClick={() => {
-					router.push('/settings');
+					router.push(SETTINGS);
 				}}>
 					Go to Settings
 				</IonButton>
@@ -79,7 +84,7 @@ function Tab3Page() {
 				<h1>Test</h1>
 
 				<IonButton onClick={() => {
-					router.push('/settings');
+					router.push(SETTINGS);
 				}}>
 					Go to Settings
 				</IonButton>

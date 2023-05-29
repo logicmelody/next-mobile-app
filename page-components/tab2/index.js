@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-
 import {
 	IonContent,
 	IonHeader,
@@ -27,6 +26,12 @@ import {
 	StyledMenuButton,
 	StyledMenuTitle,
 } from './styles';
+
+import { NavigationKeyEnums } from '../../navigation';
+
+const {
+	THIRD_PARTY_GAMES,
+} = NavigationKeyEnums;
 
 /*
 componentDidMount 執行過後，就算 navigate 到別的 page，mount 的 component 還是會存在，所以需要有 lifecyle methods 來通知我們 page 現在是不是在畫面上
@@ -156,7 +161,7 @@ function Tab2Page() {
 			<IonFooter>
 				<IonToolbar>
 					<IonButton onClick={() => {
-						router.push('/third-party-games');
+						router.push(THIRD_PARTY_GAMES);
 					}}>
 						Go to ThirdPartyGamesPage
 					</IonButton>

@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-
 import {
 	useIonRouter,
 	useIonViewDidEnter,
@@ -8,6 +7,12 @@ import {
 	useIonViewWillLeave,
 } from '@ionic/react';
 
+import { NavigationKeyEnums } from '../../navigation';
+
+const {
+	TAB1,
+} = NavigationKeyEnums;
+
 function LayoutRoute() {
 	const router = useIonRouter();
 
@@ -15,7 +20,7 @@ function LayoutRoute() {
 		console.log('LayoutRoute didMount');
 
 		setTimeout(() => {
-			router.push('/tabs/tab1', 'none', 'replace');
+			router.push(TAB1, 'none', 'replace');
 
 		}, 3000);
 

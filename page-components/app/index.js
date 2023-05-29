@@ -1,9 +1,9 @@
 import { Redirect, Route } from 'react-router-dom';
+import { IonReactRouter } from '@ionic/react-router';
 import {
 	IonApp,
 	IonRouterOutlet,
 } from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
 
 import LayoutRoute from '../layout-route';
 import Tabs from '../tabs';
@@ -11,34 +11,44 @@ import Login from '../login';
 import ThirdPartyGames from '../third-party-games';
 import Settings from '../settings';
 
+import { NavigationKeyEnums } from '../../navigation';
+
+const {
+	LAYOUT_ROUTE,
+	LOGIN,
+	SETTINGS,
+	TABS,
+	THIRD_PARTY_GAMES,
+} = NavigationKeyEnums;
+
 function App() {
 	return (
 		<IonApp>
 			<IonReactRouter>
 				{/* An IonRouterOutlet should only contain Routes or Redirects. */}
 				<IonRouterOutlet>
-					<Route path='/layout-route'>
+					<Route path={LAYOUT_ROUTE}>
 						<LayoutRoute />
 					</Route>
 
-					<Route path='/tabs'>
+					<Route path={TABS}>
 						<Tabs />
 					</Route>
 
-					<Route path='/login'>
+					<Route path={LOGIN}>
 						<Login />
 					</Route>
 
-					<Route path='/third-party-games'>
+					<Route path={THIRD_PARTY_GAMES}>
 						<ThirdPartyGames />
 					</Route>
 
-					<Route path='/settings'>
+					<Route path={SETTINGS}>
 						<Settings />
 					</Route>
 
 					<Route exact path='/'>
-						<Redirect to='/layout-route' />
+						<Redirect to={LAYOUT_ROUTE} />
 					</Route>
 
 					{/* A common routing use case is to provide a "fallback" route to be rendered in the event the location navigated to does not match any of the routes defined. */}
