@@ -5,47 +5,39 @@ import {
 	IonRouterOutlet,
 } from '@ionic/react';
 
-import LayoutRoute from '../layout-route';
-import Tabs from '../tabs';
-import Login from '../login';
-import ThirdPartyGames from '../third-party-games';
-import Settings from '../settings';
+import pages from '../../navigation/pages';
 
 import { NavigationKeyEnums } from '../../navigation';
 
 const {
 	LAYOUT_ROUTE,
-	LOGIN,
-	SETTINGS,
-	TABS,
-	THIRD_PARTY_GAMES,
 } = NavigationKeyEnums;
 
 function App() {
+	function _renderRoutes() {
+		return pages.map(page => {
+			const {
+				path,
+				PageComponent,
+			} = page;
+
+			return (
+				<Route
+					key={path}
+					path={path}
+				>
+					<PageComponent />
+				</Route>
+			);
+		});
+	}
+
 	return (
 		<IonApp>
 			<IonReactRouter>
 				{/* An IonRouterOutlet should only contain Routes or Redirects. */}
 				<IonRouterOutlet>
-					<Route path={LAYOUT_ROUTE}>
-						<LayoutRoute />
-					</Route>
-
-					<Route path={TABS}>
-						<Tabs />
-					</Route>
-
-					<Route path={LOGIN}>
-						<Login />
-					</Route>
-
-					<Route path={THIRD_PARTY_GAMES}>
-						<ThirdPartyGames />
-					</Route>
-
-					<Route path={SETTINGS}>
-						<Settings />
-					</Route>
+					{_renderRoutes()}
 
 					<Route exact path='/'>
 						<Redirect to={LAYOUT_ROUTE} />
