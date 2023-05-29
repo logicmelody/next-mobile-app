@@ -3,6 +3,8 @@ import { setupIonicReact } from '@ionic/react';
 
 import NonSSRWrapper from '../components/non-ssr-wrapper';
 
+import TestProvider from '../lib/test-provider';
+
 import '@/styles/globals.css'
 
 /* Core CSS required for Ionic components to work properly */
@@ -29,9 +31,12 @@ export default function App({ Component, pageProps }) {
 			<Head>
 				<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 			</Head>
-			<NonSSRWrapper>
-				<Component {...pageProps} />
-			</NonSSRWrapper>
+
+			<TestProvider>
+				<NonSSRWrapper>
+					<Component {...pageProps} />
+				</NonSSRWrapper>
+			</TestProvider>
 		</>
 	);
 }
