@@ -8,6 +8,7 @@ import { IonReactRouter } from '@ionic/react-router';
 
 import Tabs from '../page-components/tabs';
 import Settings from '../page-components/settings';
+import ThirdPartyGames from '../page-components/third-party-games';
 
 function Home() {
 	useEffect(() => {
@@ -30,6 +31,10 @@ function Home() {
 
 					<Route path='/settings'>
 						<Settings />
+					</Route>
+
+					<Route path='/third-party-games'>
+						<ThirdPartyGames />
 					</Route>
 
 					<Route exact path='/'>

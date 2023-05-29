@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { useEffect, useState } from 'react';
 
 import {
 	IonContent,
@@ -15,6 +14,7 @@ import {
 	IonFab,
 	IonFabButton,
 	IonIcon,
+	useIonRouter,
 	useIonViewDidEnter,
 	useIonViewDidLeave,
 	useIonViewWillEnter,
@@ -23,8 +23,6 @@ import {
 import {
 	camera,
 } from 'ionicons/icons';
-
-import { usePhotoGallery } from './use-photo-gallery';
 
 import {
 	StyledMenuButton,
@@ -39,7 +37,9 @@ React LifeCycle Methods​
 All the lifecycle methods in React (componentDidMount, componentWillUnmount, etc..) are available for you to use as well. However, since Ionic React manages the lifetime of a page, certain events might not fire when you expect them to. For instance, componentDidMount fires the first time a page is displayed, but if you navigate away from the page Ionic might keep the page around in the DOM, and a subsequent visit to the page might not call componentDidMount again. This scenario is the main reason the Ionic lifecycle methods exist, to still give you a way to call logic when views enter and exit when the native framework's events might not fire.
 */
 function Tab2Page() {
-	const { takePhoto, } = usePhotoGallery();
+	const [count, setCount] = useState(0);
+
+	const router = useIonRouter();
 
 	useEffect(() => {
 		console.log('Tab2Page didMount');
@@ -121,7 +121,6 @@ function Tab2Page() {
 				<IonFab vertical='bottom' horizontal='end' slot='fixed'>
 					<IonFabButton
 						onClick={() => {
-							// takePhoto();
 							console.log('Take photo');
 						}}
 					>
@@ -129,7 +128,14 @@ function Tab2Page() {
 					</IonFabButton>
 				</IonFab>
 
-				<h1>Test top</h1>
+				<h1>{`count = ${count}`}</h1>
+
+				<IonButton onClick={() => {
+					setCount(prevCount => prevCount + 1);
+				}}>
+					Add
+				</IonButton>
+
 				<h1>Test</h1>
 				<h1>Test</h1>
 				<h1>Test</h1>
@@ -150,7 +156,11 @@ function Tab2Page() {
 
 			<IonFooter>
 				<IonToolbar>
-					<IonTitle>Footer Toolbar</IonTitle>
+					<IonButton onClick={() => {
+						router.push('/third-party-games');
+					}}>
+						Go to ThirdPartyGamesPage
+					</IonButton>
 				</IonToolbar>
 			</IonFooter>
 		</IonPage>
