@@ -24,16 +24,16 @@ function Home() {
 			<IonReactRouter>
 				{/* An IonRouterOutlet should only contain Routes or Redirects. */}
 				<IonRouterOutlet>
-					<Route exact path='/'>
-						<Redirect to='/tabs/tab1' />
-					</Route>
-
 					<Route path='/tabs'>
 						<Tabs />
 					</Route>
 
 					<Route path='/settings'>
 						<Settings />
+					</Route>
+
+					<Route exact path='/'>
+						<Redirect to='/tabs/tab1' />
 					</Route>
 
 					{/* A common routing use case is to provide a "fallback" route to be rendered in the event the location navigated to does not match any of the routes defined. */}
