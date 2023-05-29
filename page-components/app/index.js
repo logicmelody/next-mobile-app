@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import {
 	IonApp,
@@ -6,39 +5,40 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 
+import LayoutRoute from '../layout-route';
 import Tabs from '../tabs';
-import Settings from '../settings';
+import Login from '../login';
 import ThirdPartyGames from '../third-party-games';
+import Settings from '../settings';
 
 function App() {
-	useEffect(() => {
-		console.log(`App didMount`);
-
-		return () => {
-			console.log(`App unMount`);
-		};
-
-	}, []);
-
 	return (
 		<IonApp>
 			<IonReactRouter>
 				{/* An IonRouterOutlet should only contain Routes or Redirects. */}
 				<IonRouterOutlet>
+					<Route path='/layout-route'>
+						<LayoutRoute />
+					</Route>
+
 					<Route path='/tabs'>
 						<Tabs />
 					</Route>
 
-					<Route path='/settings'>
-						<Settings />
+					<Route path='/login'>
+						<Login />
 					</Route>
 
 					<Route path='/third-party-games'>
 						<ThirdPartyGames />
 					</Route>
 
+					<Route path='/settings'>
+						<Settings />
+					</Route>
+
 					<Route exact path='/'>
-						<Redirect to='/tabs/tab1' />
+						<Redirect to='/layout-route' />
 					</Route>
 
 					{/* A common routing use case is to provide a "fallback" route to be rendered in the event the location navigated to does not match any of the routes defined. */}
