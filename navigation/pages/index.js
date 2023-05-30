@@ -17,23 +17,26 @@ const {
 const pages = [
 	{
 		path: LAYOUT_ROUTE,
-		PageComponent: LayoutRoute,
+		component: LayoutRoute,
 	},
 	{
 		path: LOGIN,
-		PageComponent: Login,
+		component: Login,
+		title: 'LOGIN',
 	},
 	{
 		path: SETTINGS,
-		PageComponent: Settings,
+		component: Settings,
+		title: 'SETTINGS',
 	},
 	{
 		path: TABS,
-		PageComponent: Tabs,
+		component: Tabs,
 	},
 	{
 		path: THIRD_PARTY_GAMES,
-		PageComponent: ThirdPartyGames,
+		component: ThirdPartyGames,
+		title: 'THIRD_PARTY_GAMES',
 	},
 ];
 

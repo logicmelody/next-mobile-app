@@ -4,12 +4,15 @@ import {
 	IonApp,
 	IonRouterOutlet,
 } from '@ionic/react';
+import withPage from '../../ljit-react-mobile-navigation/with-page';
+
+import Tabs from '../tabs';
 
 import pages from '../../navigation/pages';
-
 import { NavigationKeyEnums } from '../../navigation';
 
 const {
+	TABS,
 	LAYOUT_ROUTE,
 } = NavigationKeyEnums;
 
@@ -18,15 +21,16 @@ function App() {
 		return pages.map(page => {
 			const {
 				path,
-				PageComponent,
 			} = page;
+
+			const WrapperPageComponent = withPage(page);
 
 			return (
 				<Route
 					key={path}
 					path={path}
 				>
-					<PageComponent />
+					<WrapperPageComponent />
 				</Route>
 			);
 		});
@@ -38,6 +42,10 @@ function App() {
 				{/* An IonRouterOutlet should only contain Routes or Redirects. */}
 				<IonRouterOutlet>
 					{_renderRoutes()}
+
+					<Route path={TABS}>
+						<Tabs />
+					</Route>
 
 					<Route exact path='/'>
 						<Redirect to={LAYOUT_ROUTE} />
