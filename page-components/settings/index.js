@@ -58,7 +58,10 @@ function SettingsPage({
 			<h1>SettingsPage</h1>
 
 			<IonButton onClick={() => {
-				onNavigate(SETTINGS_DETAIL);
+				onNavigate({
+					page: SETTINGS_DETAIL,
+					navigationType: 'push',
+				})
 			}}>
 				Go to SettingsDetail
 			</IonButton>

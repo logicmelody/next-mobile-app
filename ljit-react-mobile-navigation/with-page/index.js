@@ -101,8 +101,29 @@ function withPage(PageObject) {
 			_handleNavigatorEvent('on-view-did-leave');
 		});
 
-		function _handleOnNavigate(path) {
-			router.push(path);
+		function _handleOnNavigate({
+			page,
+			navigationType,
+			navigationTitle,
+			// hiddenToolbarRightButtonIds = [],
+			passProps = {},
+		}) {
+			switch (navigationType) {
+				case 'push': {
+					router.push(page);
+
+					return;
+				}
+
+				case 'replace': {
+					router.push(page, 'none', 'replace');
+
+					return;
+				}
+
+				default:
+					return;
+			}
 		}
 
 		function _handleNavigatorEvent(event) {

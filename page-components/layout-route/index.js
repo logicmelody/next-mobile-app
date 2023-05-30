@@ -1,11 +1,4 @@
 import { useEffect } from 'react';
-import {
-	useIonRouter,
-	useIonViewDidEnter,
-	useIonViewDidLeave,
-	useIonViewWillEnter,
-	useIonViewWillLeave,
-} from '@ionic/react';
 
 import { NavigationKeyEnums } from '../../navigation';
 
@@ -13,14 +6,17 @@ const {
 	TAB1,
 } = NavigationKeyEnums;
 
-function LayoutRoute() {
-	const router = useIonRouter();
-
+function LayoutRoute({
+	onNavigate,
+}) {
 	useEffect(() => {
 		console.log('LayoutRoute didMount');
 
 		setTimeout(() => {
-			router.push(TAB1, 'none', 'replace');
+			onNavigate({
+				page: TAB1,
+				navigationType: 'replace',
+			})
 
 		}, 3000);
 
@@ -28,29 +24,7 @@ function LayoutRoute() {
 			console.log('LayoutRoute unMount');
 		};
 
-	}, [router]);
-
-	useIonViewWillEnter(() => {
-		// it's a good method to load data from services.
-
-		console.log('LayoutRoute ionViewWillEnter event fired');
-	});
-
-	useIonViewDidEnter(() => {
-		// This event won't fire until after the page is visible to the user.
-
-		console.log('LayoutRoute ionViewDidEnter event fired');
-	});
-
-	useIonViewWillLeave(() => {
-		// Can be used for cleanup, like unsubscribing from data sources.
-
-		console.log('LayoutRoute ionViewWillLeave event fired');
-	});
-
-	useIonViewDidLeave(() => {
-		console.log('LayoutRoute ionViewDidLeave event fired');
-	});
+	}, [onNavigate]);
 
 	return null;
 }
