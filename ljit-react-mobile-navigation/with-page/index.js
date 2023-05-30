@@ -12,6 +12,7 @@ import {
 	IonBackButton,
 	IonSearchbar,
 	IonProgressBar,
+	useIonRouter,
 	useIonViewDidEnter,
 	useIonViewDidLeave,
 	useIonViewWillEnter,
@@ -62,6 +63,8 @@ function withPage(PageObject) {
 	};
 
 	function WithPageComponent(props) {
+		const router = useIonRouter();
+
 		const [_navigationTitle, setNavigationTitle] = useState('');
 
 		const {
@@ -97,6 +100,10 @@ function withPage(PageObject) {
 		useIonViewDidLeave(() => {
 			_handleNavigatorEvent('on-view-did-leave');
 		});
+
+		function _handleOnNavigate(path) {
+			router.push(path);
+		}
 
 		function _handleNavigatorEvent(event) {
 			if (!onNavigatorEvent) {
@@ -208,6 +215,7 @@ function withPage(PageObject) {
 
 							onNavigatorEvent = func;
 						}}
+						onNavigate={_handleOnNavigate}
 						onChangeNavigationTitle={(title) => {
 							setNavigationTitle(title);
 						}}

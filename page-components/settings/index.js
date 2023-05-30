@@ -1,7 +1,17 @@
 import { useEffect } from 'react';
+import {
+	IonButton,
+} from '@ionic/react';
+
+import { NavigationKeyEnums } from '../../navigation';
+
+const {
+	SETTINGS_DETAIL,
+} = NavigationKeyEnums;
 
 function SettingsPage({
 	setOnNavigatorEvent,
+	onNavigate,
 }) {
 	useEffect(() => {
 		console.log('SettingsPage didMount');
@@ -45,7 +55,14 @@ function SettingsPage({
 
 	return (
 		<>
-			<h1>Test top</h1>
+			<h1>SettingsPage</h1>
+
+			<IonButton onClick={() => {
+				onNavigate(SETTINGS_DETAIL);
+			}}>
+				Go to SettingsDetail
+			</IonButton>
+
 			<h1>Test</h1>
 			<h1>Test</h1>
 			<h1>Test</h1>
