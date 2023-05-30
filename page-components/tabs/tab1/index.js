@@ -50,11 +50,11 @@ function Tab1Page() {
 			</IonHeader>
 
 			<IonContent fullscreen>
-				<IonHeader collapse='condense'>
+				{/* <IonHeader collapse='condense'>
 					<IonToolbar>
 						<IonTitle size='large'>Tab 12323</IonTitle>
 					</IonToolbar>
-				</IonHeader>
+				</IonHeader> */}
 
 				<IonButton onClick={() => {
 					share();
