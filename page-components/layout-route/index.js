@@ -1,10 +1,15 @@
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 import { NavigationKeyEnums } from '../../navigation';
 
 const {
 	TAB1,
 } = NavigationKeyEnums;
+
+const propTypes = {
+	onNavigate: PropTypes.func.isRequired,
+};
 
 function LayoutRoute({
 	onNavigate,
@@ -37,5 +42,7 @@ function LayoutRoute({
 
 	return null;
 }
+
+LayoutRoute.propTypes = propTypes;
 
 export default LayoutRoute;

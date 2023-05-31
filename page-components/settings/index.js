@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import {
 	IonButton,
 } from '@ionic/react';
@@ -8,6 +9,11 @@ import { NavigationKeyEnums } from '../../navigation';
 const {
 	SETTINGS_DETAIL,
 } = NavigationKeyEnums;
+
+const propTypes = {
+	setOnNavigatorEvent: PropTypes.func.isRequired,
+	onNavigate: PropTypes.func.isRequired,
+};
 
 function SettingsPage({
 	setOnNavigatorEvent,
@@ -89,5 +95,7 @@ function SettingsPage({
 		</>
 	);
 }
+
+SettingsPage.propTypes = propTypes;
 
 export default SettingsPage;
