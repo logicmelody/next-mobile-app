@@ -71,7 +71,7 @@ function SettingsPage({
 						selectedId: 100,
 						selectedName: '123',
 					},
-				})
+				});
 			}}>
 				Go to SettingsDetail
 			</IonButton>

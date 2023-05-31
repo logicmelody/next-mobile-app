@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import {
 	IonContent,
 	IonHeader,
@@ -6,7 +7,6 @@ import {
 	IonItem,
 	IonLabel,
 	IonButton,
-	useIonRouter,
 } from '@ionic/react';
 
 import {
@@ -19,12 +19,14 @@ const {
 	SETTINGS,
 } = NavigationKeyEnums;
 
-function Tab3Page() {
-	const router = useIonRouter();
+const propTypes = {
+	onNavigate: PropTypes.func.isRequired,
+};
 
+function Tab3Page({
+	onNavigate,
+}) {
 	const [count, setCount] = useState(0);
-
-	console.log('Tab3Page router', router);
 
 	return (
 		<>
@@ -37,7 +39,10 @@ function Tab3Page() {
 			</IonItem>
 
 			<IonButton onClick={() => {
-				router.push(SETTINGS);
+				onNavigate({
+					page: SETTINGS,
+					navigationType: 'push',
+				});
 			}}>
 				Go to Settings
 			</IonButton>
@@ -68,7 +73,10 @@ function Tab3Page() {
 			<h1>Test</h1>
 
 			<IonButton onClick={() => {
-				router.push(SETTINGS);
+				onNavigate({
+					page: SETTINGS,
+					navigationType: 'push',
+				});
 			}}>
 				Go to Settings
 			</IonButton>
@@ -141,5 +149,7 @@ function Tab3Page() {
 	// 	</IonPage>
 	// );
 }
+
+Tab3Page.propTypes = propTypes;
 
 export default Tab3Page;
