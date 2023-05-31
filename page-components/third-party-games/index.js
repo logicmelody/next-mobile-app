@@ -1,4 +1,9 @@
 import { useEffect } from 'react';
+import PropTypes from 'prop-types';
+
+const propTypes = {
+	setOnNavigatorEvent: PropTypes.func.isRequired,
+};
 
 function ThirdPartyGamesPage({
 	setOnNavigatorEvent,
@@ -66,5 +71,7 @@ function ThirdPartyGamesPage({
 		</>
 	);
 }
+
+ThirdPartyGamesPage.propTypes = propTypes;
 
 export default ThirdPartyGamesPage;
