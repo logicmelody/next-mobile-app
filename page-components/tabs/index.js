@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import {
 	IonIcon,
 	IonLabel,
@@ -15,9 +15,9 @@ import {
 	square,
 } from 'ionicons/icons';
 
-import Tab1 from './tab1';
-import Tab2 from './tab2';
-import Tab3 from './tab3';
+import Tab1 from '../tab1';
+import Tab2 from '../tab2';
+import Tab3 from '../tab3';
 
 import { NavigationKeyEnums } from '../../navigation';
 

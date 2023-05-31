@@ -27,7 +27,7 @@ import {
 	StyledMenuTitle,
 } from './styles';
 
-import { NavigationKeyEnums } from '../../../navigation';
+import { NavigationKeyEnums } from '../../navigation';
 
 const {
 	THIRD_PARTY_GAMES,

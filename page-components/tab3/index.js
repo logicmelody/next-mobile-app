@@ -13,7 +13,7 @@ import {
 	StyledMenuTitle,
 } from './styles';
 
-import { NavigationKeyEnums } from '../../../navigation';
+import { NavigationKeyEnums } from '../../navigation';
 
 const {
 	SETTINGS,
