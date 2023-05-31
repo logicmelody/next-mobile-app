@@ -24,7 +24,7 @@ function LayoutRoute({
 			console.log('LayoutRoute unMount');
 		};
 
-	}, [onNavigate]);
+	}, []);
 
 	return null;
 }
