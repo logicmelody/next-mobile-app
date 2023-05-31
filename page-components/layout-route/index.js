@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { NavigationKeyEnums } from '../../navigation';
 
@@ -9,22 +9,31 @@ const {
 function LayoutRoute({
 	onNavigate,
 }) {
+	const [isAuthed, setIsAuthed] = useState(false); 
+
 	useEffect(() => {
 		console.log('LayoutRoute didMount');
 
 		setTimeout(() => {
-			onNavigate({
-				page: TAB1,
-				navigationType: 'replace',
-			})
+			setIsAuthed(true);
 
-		}, 3000);
+		}, 2000);
 
 		return () => {
 			console.log('LayoutRoute unMount');
 		};
 
 	}, []);
+
+	useEffect(() => {
+		if (isAuthed) {
+			onNavigate({
+				page: TAB1,
+				navigationType: 'replace',
+			})
+		}
+
+	}, [isAuthed, onNavigate]);
 
 	return null;
 }
