@@ -82,6 +82,10 @@ function withPage(pageObject) {
 			toolbarButtons = {},
 		} = pageObject;
 
+		const {
+			routeOptions,
+		} = router.routeInfo;
+
 		useIonViewWillEnter(() => {
 			// it's a good method to load data from services.
 			_handleNavigatorEvent('on-view-will-enter');
@@ -110,7 +114,7 @@ function withPage(pageObject) {
 		}) {
 			switch (navigationType) {
 				case 'push': {
-					router.push(page);
+					router.push(page, 'forward', 'push', passProps);
 
 					return;
 				}
@@ -241,6 +245,7 @@ function withPage(pageObject) {
 							setNavigationTitle(title);
 						}}
 						{...props}
+						{...routeOptions}
 					/>
 				</IonContent>
 			</IonPage>

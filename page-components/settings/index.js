@@ -61,6 +61,10 @@ function SettingsPage({
 				onNavigate({
 					page: SETTINGS_DETAIL,
 					navigationType: 'push',
+					passProps: {
+						selectedId: 100,
+						selectedName: '123',
+					},
 				})
 			}}>
 				Go to SettingsDetail
