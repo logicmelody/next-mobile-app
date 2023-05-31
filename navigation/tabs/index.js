@@ -1,90 +1,36 @@
-import { getProductConfigs } from '../../../product-configs/utils.js';
-import getMobileTabImage from '../../../images/mobile-tabs';
-import {
-	NavigationKeyEnums
-} from '../';
+import { NavigationKeyEnums } from '../';
 
-const configs = getProductConfigs();
-const { MobileTabs: MobileTabsConfig } = configs;
+import Tab1 from '../../page-components/tab1';
+import Tab2 from '../../page-components/tab2';
+import Tab3 from '../../page-components/tab3';
 
-const { MobileTabs, TabIndexEnums } = MobileTabsConfig;
+const {
+	TABS,
+	TAB1,
+	TAB2,
+	TAB3,
+} = NavigationKeyEnums;
 
-const TabKeyEnums = {
-	HOME: 'home',
-	HOME2: 'home2',
-	DRAWINGS: 'drawings',
-	ATM: 'atm',
-	CHAT: 'chat',
-	MEMBER_CENTER: 'member-center',
-};
-
-function getPageObject(tabKey) {
-	switch (tabKey) {
-		case TabKeyEnums.HOME:
-			return {
-				page: NavigationKeyEnums.HOME,
-				icon: 'md-home',
-			};
-
-		case TabKeyEnums.HOME2:
-			return {
-				page: NavigationKeyEnums.HOME2,
-				icon: 'md-home',
-			};
-
-		case TabKeyEnums.DRAWINGS:
-			return {
-				page: NavigationKeyEnums.DRAWINGS,
-				icon: 'fa-file',
-			};
-
-		case TabKeyEnums.ATM:
-			return {
-				page: NavigationKeyEnums.ATM,
-				icon: 'fa-file',
-			};
-
-		case TabKeyEnums.MEMBER_CENTER:
-			return {
-				page: NavigationKeyEnums.MEMBER_CENTER,
-				icon: 'fa-file',
-			};
-
-		case TabKeyEnums.CHAT:
-			return {
-				page: NavigationKeyEnums.CHAT,
-				icon: 'md-home',
-			};
-
-
-		default:
-			return {
-				page: NavigationKeyEnums.HOME,
-				icon: 'md-home',
-			};
-	}
-}
-
-export { TabIndexEnums };
-
-export default MobileTabs.map(item => {
-	const {
-		label,
-		key,
-		isRootPage,
-		tabIconType,
-		normalIconKey,
-		selectedIconKey,
-	} = item;
-
-	return {
-		...getPageObject(key),
-		label,
-		isRootPage,
-		tabIconType,
-		imageIcons: {
-			normalIcon: getMobileTabImage(normalIconKey),
-			selectedIcon: getMobileTabImage(selectedIconKey),
+const Tabs = {
+	path: TABS,
+	tabs: [
+		{
+			path: TAB1,
+			component: Tab1,
+			title: 'TAB1',
+			tabLebal: 'TAB1',
 		},
-	};
-});
+		{
+			path: TAB2,
+			component: Tab2,
+			title: 'TAB2',
+			tabLebal: 'TAB2',
+		},
+		{
+			path: TAB3,
+			component: Tab3,
+			title: 'TAB3',
+			tabLebal: 'TAB3',
+		},
+	],
+};
