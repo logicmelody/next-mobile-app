@@ -13,7 +13,7 @@ const {
 
 const Tabs = {
 	path: TABS,
-	tabs: [
+	tabPages: [
 		{
 			path: TAB1,
 			component: Tab1,
@@ -34,3 +34,5 @@ const Tabs = {
 		},
 	],
 };
+
+export default Tabs;

@@ -15,10 +15,7 @@ import {
 	square,
 } from 'ionicons/icons';
 
-import Tab1 from '../tab1';
-import Tab2 from '../tab2';
-import Tab3 from '../tab3';
-
+import withPage from '../with-page';
 import { NavigationKeyEnums } from '../../navigation';
 
 const {
@@ -27,48 +24,48 @@ const {
 	TAB3,
 } = NavigationKeyEnums;
 
-function Tabs() {
+function TabsApp({
+	tabs,
+}) {
 	const router = useIonRouter();
 
 	const pathname = router.routeInfo.pathname;
 
 	useEffect(() => {
-		console.log(`Tabs didMount`);
+		console.log(`TabsApp didMount`);
 
 		return () => {
-			console.log(`Tabs unMount`);
+			console.log(`TabsApp unMount`);
 		};
 
 	}, []);
 
+	function _renderRoutes() {
+		console.log('tabs', tabs);
+
+		return tabs.map(tab => {
+			const {
+				path,
+			} = tab;
+
+			const WrapperPageComponent = withPage(tab);
+
+			return (
+				<Route
+					key={path}
+					exact
+					path={path}
+				>
+					<WrapperPageComponent />
+				</Route>
+			);
+		});
+	}
+
 	return (
 		<IonTabs>
-			{/* An IonRouterOutlet should only contain Routes or Redirects. */}
 			<IonRouterOutlet>
-				<Route exact path={TAB1}>
-					<Tab1 />
-				</Route>
-
-				<Route exact path={TAB2}>
-					<Tab2 />
-				</Route>
-
-				<Route exact path={TAB3}>
-					<Tab3 />
-				</Route>
-
-				{/* A common routing use case is to provide a "fallback" route to be rendered in the event the location navigated to does not match any of the routes defined. */}
-				{/* <Route
-							render={() => <Redirect to='/tab1' />}
-						/> */}
-
-				{/* <Route
-							exact
-							path="/dashboard"
-							render={(props) => {
-								return isAuthed ? <DashboardPage {...props} /> : <LoginPage />;
-							}}
-						/> */}
+				{_renderRoutes()}
 			</IonRouterOutlet>
 
 			<IonTabBar slot='bottom'>
@@ -96,4 +93,4 @@ function Tabs() {
 	);
 }
 
-export default Tabs;
+export default TabsApp;

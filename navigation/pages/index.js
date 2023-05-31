@@ -4,7 +4,6 @@ import LayoutRoute from '../../page-components/layout-route';
 import Login from '../../page-components/login';
 import Settings from '../../page-components/settings';
 import SettingsDetail from '../../page-components/settings-detail';
-import Tabs from '../../page-components/tabs';
 import ThirdPartyGames from '../../page-components/third-party-games';
 
 const {
@@ -12,7 +11,6 @@ const {
 	LOGIN,
 	SETTINGS,
 	SETTINGS_DETAIL,
-	TABS,
 	THIRD_PARTY_GAMES,
 } = NavigationKeyEnums;
 
@@ -35,10 +33,6 @@ const Pages = [
 		path: SETTINGS_DETAIL,
 		component: SettingsDetail,
 		title: 'SETTINGS_DETAIL',
-	},
-	{
-		path: TABS,
-		component: Tabs,
 	},
 	{
 		path: THIRD_PARTY_GAMES,

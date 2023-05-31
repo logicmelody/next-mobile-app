@@ -5,6 +5,7 @@ import {
 	IonRouterOutlet,
 } from '@ionic/react';
 
+import TabsApp from './tabs-app';
 import withPage from './with-page';
 
 function startApp({
@@ -33,9 +34,16 @@ function startApp({
 
 	function _renderTabsRoute() {
 		if (tabs) {
+			const {
+				path,
+				tabPages,
+			} = tabs;
+
 			return (
-				<Route path={TABS}>
-					{/* <Tabs /> */}
+				<Route path={path}>
+					<TabsApp
+						tabs={tabPages}
+					/>
 				</Route>
 			);
 		}
