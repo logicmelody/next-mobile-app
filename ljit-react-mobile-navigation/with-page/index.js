@@ -20,7 +20,7 @@ import {
 } from '@ionic/react';
 
 /*
-	PageObject = {
+	pageObject = {
 		// Require
 		title,
 		component,
@@ -43,7 +43,7 @@ import {
 		},
 	}
 */
-function withPage(PageObject) {
+function withPage(pageObject) {
 	let onNavigatorEvent = () => {};
 
 	const propTypes = {
@@ -80,7 +80,7 @@ function withPage(PageObject) {
 			component: PageComponent,
 			isToolbarHidden,
 			toolbarButtons = {},
-		} = PageObject;
+		} = pageObject;
 
 		useIonViewWillEnter(() => {
 			// it's a good method to load data from services.
