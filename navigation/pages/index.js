@@ -16,7 +16,7 @@ const {
 	THIRD_PARTY_GAMES,
 } = NavigationKeyEnums;
 
-const pages = [
+const Pages = [
 	{
 		path: LAYOUT_ROUTE,
 		component: LayoutRoute,
@@ -47,4 +47,4 @@ const pages = [
 	},
 ];
 
-export default pages;
+export default Pages;

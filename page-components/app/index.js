@@ -4,11 +4,11 @@ import {
 	IonApp,
 	IonRouterOutlet,
 } from '@ionic/react';
-import withPage from '../../ljit-react-mobile-navigation/with-page';
 
+import withPage from '../../ljit-react-mobile-navigation/with-page';
 import Tabs from '../tabs';
 
-import pages from '../../navigation/pages';
+import Pages from '../../navigation/pages';
 import { NavigationKeyEnums } from '../../navigation';
 
 const {
@@ -18,7 +18,7 @@ const {
 
 function App() {
 	function _renderRoutes() {
-		return pages.map(page => {
+		return Pages.map(page => {
 			const {
 				path,
 			} = page;
