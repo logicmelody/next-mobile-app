@@ -120,7 +120,7 @@ function withPage(pageObject) {
 				}
 
 				case 'replace': {
-					router.push(page, 'none', 'replace');
+					router.push(page, 'root', 'replace');
 
 					return;
 				}
