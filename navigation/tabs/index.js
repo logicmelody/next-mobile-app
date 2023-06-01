@@ -16,18 +16,21 @@ const {
 registerPage(TAB1, {
 	component: Tab1,
 	title: 'TAB1',
+	hasBackButton: false,
 	tabLebal: 'TAB1',
 });
 
 registerPage(TAB2, {
 	component: Tab2,
 	title: 'TAB2',
+	hasBackButton: false,
 	tabLebal: 'TAB2',
 });
 
 registerPage(TAB3, {
 	component: Tab3,
 	title: 'TAB3',
+	hasBackButton: false,
 	tabLebal: 'TAB3',
 });
 

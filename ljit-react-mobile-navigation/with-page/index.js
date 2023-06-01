@@ -77,6 +77,7 @@ function withPage(pageObject) {
 
 		const {
 			title,
+			hasBackButton = true,
 			component: PageComponent,
 			isToolbarHidden,
 			toolbarButtons = {},
@@ -136,6 +137,16 @@ function withPage(pageObject) {
 			}
 
 			onNavigatorEvent(event);
+		}
+
+		function _renderBackButton() {
+			if (hasBackButton) {
+				return (
+					<IonButtons slot='start'>
+						<IonBackButton />
+					</IonButtons>
+				);
+			}
 		}
 
 		// function _renderToolbar() {
@@ -221,9 +232,7 @@ function withPage(pageObject) {
 				>
 					{/* // NOTE: 如果放在 IonHeader 或是 IonFooter，位置會被固定，如果放在 IonContent 中，會跟著 page scoll */}
 					<IonToolbar>
-						<IonButtons slot='start'>
-							<IonBackButton />
-						</IonButtons>
+						{_renderBackButton()}
 
 						<IonTitle>
 							{navigationTitle || title}
