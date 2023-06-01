@@ -43,7 +43,7 @@ function TabsApp({
 
 	function _renderRoutes() {
 		return tabs.map(tab => {
-			const PageComponent = getPage(tab);
+			const page = getPage(tab);
 
 			return (
 				<Route
@@ -51,7 +51,7 @@ function TabsApp({
 					exact
 					path={tab}
 				>
-					<PageComponent />
+					<page.component />
 				</Route>
 			);
 		});

@@ -28,7 +28,10 @@ const pageLocator = new ServiceLocator();
 	}
 */
 export function registerPage(path, pageObject) {
-	pageLocator.register(path, withPage(pageObject));
+	pageLocator.register(path, {
+		...pageObject,
+		component: withPage(pageObject),
+	});
 }
 
 export function getPage(path) {

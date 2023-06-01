@@ -19,16 +19,14 @@ function startApp({
 }) {
 	function _renderRoutes() {
 		return pages.map(page => {
-			const PageComponent = getPage(page);
-
-			console.log('PageComponent', PageComponent);
+			const _page = getPage(page);
 
 			return (
 				<Route
 					key={page}
 					path={page}
 				>
-					<PageComponent />
+					<_page.component />
 				</Route>
 			);
 		});
