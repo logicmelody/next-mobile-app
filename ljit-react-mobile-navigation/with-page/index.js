@@ -19,6 +19,8 @@ import {
 	useIonViewWillLeave,
 } from '@ionic/react';
 
+import Toolbar from './toolbar';
+
 /*
 	pageObject = {
 		// Require
@@ -86,6 +88,10 @@ function withPage(pageObject) {
 			routeOptions = {},
 		} = router.routeInfo;
 
+		const {
+			navigationTitle,
+		} = routeOptions;
+
 		useIonViewWillEnter(() => {
 			// it's a good method to load data from services.
 			_handleNavigatorEvent('on-view-will-enter');
@@ -139,16 +145,6 @@ function withPage(pageObject) {
 			}
 
 			onNavigatorEvent(event);
-		}
-
-		function _renderBackButton() {
-			if (hasBackButton) {
-				return (
-					<IonButtons slot='start'>
-						<IonBackButton />
-					</IonButtons>
-				);
-			}
 		}
 
 		// function _renderToolbar() {
@@ -225,22 +221,6 @@ function withPage(pageObject) {
 		// 		button.component : <Icon icon={button.icon} />;
 		// }
 
-		function _renderToolbar() {
-			const {
-				navigationTitle,
-			} = routeOptions;
-
-			return (
-				<IonToolbar>
-					{_renderBackButton()}
-
-					<IonTitle>
-						{navigationTitle || title}
-					</IonTitle>
-				</IonToolbar>
-			);
-		}
-
 		return (
 			<IonPage>
 				<IonHeader
@@ -249,7 +229,11 @@ function withPage(pageObject) {
 					collapse='fade'
 				>
 					{/* // NOTE: 如果放在 IonHeader 或是 IonFooter，位置會被固定，如果放在 IonContent 中，會跟著 page scoll */}
-					{_renderToolbar()}
+					<Toolbar
+						navigationTitle={navigationTitle}
+						title={title}
+						hasBackButton={hasBackButton}
+					/>
 				</IonHeader>
 
 				<IonContent fullscreen>
