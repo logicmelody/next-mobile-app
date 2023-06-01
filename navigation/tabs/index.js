@@ -1,3 +1,5 @@
+import { registerPage } from '../../ljit-react-mobile-navigation';
+
 import { NavigationKeyEnums } from '../';
 
 import Tab1 from '../../page-components/tab1';
@@ -11,27 +13,30 @@ const {
 	TAB3,
 } = NavigationKeyEnums;
 
+registerPage(TAB1, {
+	component: Tab1,
+	title: 'TAB1',
+	tabLebal: 'TAB1',
+});
+
+registerPage(TAB2, {
+	component: Tab2,
+	title: 'TAB2',
+	tabLebal: 'TAB2',
+});
+
+registerPage(TAB3, {
+	component: Tab3,
+	title: 'TAB3',
+	tabLebal: 'TAB3',
+});
+
 const Tabs = {
 	path: TABS,
 	tabPages: [
-		{
-			path: TAB1,
-			component: Tab1,
-			title: 'TAB1',
-			tabLebal: 'TAB1',
-		},
-		{
-			path: TAB2,
-			component: Tab2,
-			title: 'TAB2',
-			tabLebal: 'TAB2',
-		},
-		{
-			path: TAB3,
-			component: Tab3,
-			title: 'TAB3',
-			tabLebal: 'TAB3',
-		},
+		TAB1,
+		TAB2,
+		TAB3,
 	],
 };
 

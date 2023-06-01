@@ -6,7 +6,11 @@ import {
 } from '@ionic/react';
 
 import TabsApp from './tabs-app';
-import withPage from './with-page';
+
+import {
+	registerPage,
+	getPage,
+} from './register';
 
 function startApp({
 	tabs,
@@ -15,18 +19,16 @@ function startApp({
 }) {
 	function _renderRoutes() {
 		return pages.map(page => {
-			const {
-				path,
-			} = page;
+			const PageComponent = getPage(page);
 
-			const WrapperPageComponent = withPage(page);
+			console.log('PageComponent', PageComponent);
 
 			return (
 				<Route
-					key={path}
-					path={path}
+					key={page}
+					path={page}
 				>
-					<WrapperPageComponent />
+					<PageComponent />
 				</Route>
 			);
 		});
@@ -81,4 +83,5 @@ function startApp({
 
 export {
 	startApp,
+	registerPage,
 };

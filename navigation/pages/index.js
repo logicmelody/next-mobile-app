@@ -1,3 +1,5 @@
+import { registerPage } from '../../ljit-react-mobile-navigation';
+
 import { NavigationKeyEnums } from '../';
 
 import LayoutRoute from '../../page-components/layout-route';
@@ -14,31 +16,36 @@ const {
 	THIRD_PARTY_GAMES,
 } = NavigationKeyEnums;
 
+registerPage(LAYOUT_ROUTE, {
+	component: LayoutRoute,
+});
+
+registerPage(LOGIN, {
+	component: Login,
+	title: 'LOGIN',
+});
+
+registerPage(SETTINGS, {
+	component: Settings,
+	title: 'SETTINGS',
+});
+
+registerPage(SETTINGS_DETAIL, {
+	component: SettingsDetail,
+	title: 'SETTINGS_DETAIL',
+});
+
+registerPage(THIRD_PARTY_GAMES, {
+	component: ThirdPartyGames,
+	title: 'THIRD_PARTY_GAMES',
+});
+
 const Pages = [
-	{
-		path: LAYOUT_ROUTE,
-		component: LayoutRoute,
-	},
-	{
-		path: LOGIN,
-		component: Login,
-		title: 'LOGIN',
-	},
-	{
-		path: SETTINGS,
-		component: Settings,
-		title: 'SETTINGS',
-	},
-	{
-		path: SETTINGS_DETAIL,
-		component: SettingsDetail,
-		title: 'SETTINGS_DETAIL',
-	},
-	{
-		path: THIRD_PARTY_GAMES,
-		component: ThirdPartyGames,
-		title: 'THIRD_PARTY_GAMES',
-	},
+	LAYOUT_ROUTE,
+	LOGIN,
+	SETTINGS,
+	SETTINGS_DETAIL,
+	THIRD_PARTY_GAMES,
 ];
 
 export default Pages;

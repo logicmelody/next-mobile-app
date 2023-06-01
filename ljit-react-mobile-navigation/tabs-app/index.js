@@ -15,8 +15,9 @@ import {
 	square,
 } from 'ionicons/icons';
 
-import withPage from '../with-page';
 import { NavigationKeyEnums } from '../../navigation';
+
+import { getPage } from '../register';
 
 const {
 	TAB1,
@@ -41,22 +42,16 @@ function TabsApp({
 	}, []);
 
 	function _renderRoutes() {
-		console.log('tabs', tabs);
-
 		return tabs.map(tab => {
-			const {
-				path,
-			} = tab;
-
-			const WrapperPageComponent = withPage(tab);
+			const PageComponent = getPage(tab);
 
 			return (
 				<Route
-					key={path}
+					key={tab}
 					exact
-					path={path}
+					path={tab}
 				>
-					<WrapperPageComponent />
+					<PageComponent />
 				</Route>
 			);
 		});
