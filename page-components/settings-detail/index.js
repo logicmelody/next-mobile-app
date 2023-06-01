@@ -1,5 +1,8 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import {
+	IonButton,
+} from '@ionic/react';
 
 import {
 	StyledPassPropsContainer,
@@ -8,6 +11,7 @@ import {
 const propTypes = {
 	selectedId: PropTypes.number,
 	selectedName: PropTypes.string,
+	onBack: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
@@ -18,6 +22,7 @@ const defaultProps = {
 function SettingsDetailPage({
 	selectedId,
 	selectedName,
+	onBack,
 }) {
 	useEffect(() => {
 		console.log('SettingsDetailPage didMount');
@@ -28,6 +33,8 @@ function SettingsDetailPage({
 
 	}, []);
 
+	console.log('SettingsDetailPage onBack', onBack);
+
 	return (
 		<>
 			<h1>SettingsDetailPage</h1>
@@ -37,6 +44,12 @@ function SettingsDetailPage({
 				<br />
 				{`selectedName = ${selectedName}`}
 			</StyledPassPropsContainer>
+
+			<IonButton onClick={() => {
+				onBack();
+			}}>
+				Go back
+			</IonButton>
 
 			<h1>Test</h1>
 			<h1>Test</h1>

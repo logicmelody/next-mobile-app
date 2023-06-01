@@ -52,14 +52,12 @@ function withPage(pageObject) {
 		navigationType: PropTypes.string,
 		navigationTitle: PropTypes.string,
 		hiddenToolbarRightButtonIds: PropTypes.array,
-		onBack: PropTypes.func,
 	};
 
 	const defaultProps = {
 		navigationType: '',
 		navigationTitle: '',
 		hiddenToolbarRightButtonIds: [],
-		onBack: () => {},
 	};
 
 	function WithPageComponent(props) {
@@ -68,7 +66,6 @@ function withPage(pageObject) {
 		const [_navigationTitle, setNavigationTitle] = useState('');
 
 		const {
-			onBack,
 			navigationType,
 			hiddenToolbarRightButtonIds,
 		} = props;
@@ -136,6 +133,14 @@ function withPage(pageObject) {
 			}
 		}
 
+		function _handleOnBack() {
+			console.log('_handleOnBack_handleOnBack_handleOnBack');
+
+			if (router.canGoBack()) {
+				router.goBack();
+			}
+		}
+
 		function _handleNavigatorEvent(event) {
 			if (!onNavigatorEvent) {
 				return;
@@ -199,6 +204,7 @@ function withPage(pageObject) {
 							onNavigatorEvent = func;
 						}}
 						onNavigate={_handleOnNavigate}
+						onBack={_handleOnBack}
 						onChangeNavigationTitle={(title) => {
 							setNavigationTitle(title);
 						}}
