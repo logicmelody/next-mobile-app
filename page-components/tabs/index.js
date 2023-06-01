@@ -49,10 +49,6 @@ function Tabs() {
 					<Tab3 />
 				</Route>
 
-				<Route exact path={'/tabs'}>
-					<Redirect to={`/tabs/tab1`} />
-				</Route>
-
 				{/* A common routing use case is to provide a "fallback" route to be rendered in the event the location navigated to does not match any of the routes defined. */}
 				{/* <Route
 							render={() => <Redirect to='/tab1' />}
@@ -71,20 +67,20 @@ function Tabs() {
 				<IonTabButton tab='tab1' href={`/tabs/tab1`}>
 					<IonIcon aria-hidden='true' icon={triangle} />
 					<IonLabel>
-						Tab 1 {'/tabs/tab1' === pathname ? 'Selected' : ''}
+						Tab 1
 					</IonLabel>
 				</IonTabButton>
 
 				<IonTabButton tab='tab2' href={`/tabs/tab2`}>
 					<IonButton>
-						Tab 2 {'/tabs/tab2' === pathname ? 'Selected' : ''}
+						Tab 2
 					</IonButton>
 				</IonTabButton>
 
 				<IonTabButton tab='tab3' href={`/tabs/tab3`}>
 					<IonIcon aria-hidden='true' icon={square} />
 					<IonLabel>
-						Tab 3 {'/tabs/tab3' === pathname ? 'Selected' : ''}
+						Tab 3
 					</IonLabel>
 				</IonTabButton>
 			</IonTabBar>

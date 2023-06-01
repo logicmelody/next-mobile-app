@@ -7,23 +7,19 @@ import {
 	IonTitle,
 	IonToolbar,
 	IonButtons,
-	IonButton,
 	IonBackButton,
-	useIonRouter,
 	useIonViewDidEnter,
 	useIonViewDidLeave,
 	useIonViewWillEnter,
 	useIonViewWillLeave,
 } from '@ionic/react';
 
-function SettingsPage() {
-	const router = useIonRouter();
-
+function SettingsDetailPage() {
 	useEffect(() => {
-		console.log('SettingsPage didMount');
+		console.log('SettingsDetailPage didMount');
 
 		return () => {
-			console.log('SettingsPage unMount');
+			console.log('SettingsDetailPage unMount');
 		};
 
 	}, []);
@@ -31,23 +27,23 @@ function SettingsPage() {
 	useIonViewWillEnter(() => {
 		// it's a good method to load data from services.
 
-		console.log('SettingsPage ionViewWillEnter event fired');
+		console.log('SettingsDetailPage ionViewWillEnter event fired');
 	});
 
 	useIonViewDidEnter(() => {
 		// This event won't fire until after the page is visible to the user.
 
-		console.log('SettingsPage ionViewDidEnter event fired');
+		console.log('SettingsDetailPage ionViewDidEnter event fired');
 	});
 
 	useIonViewWillLeave(() => {
 		// Can be used for cleanup, like unsubscribing from data sources.
 
-		console.log('SettingsPage ionViewWillLeave event fired');
+		console.log('SettingsDetailPage ionViewWillLeave event fired');
 	});
 
 	useIonViewDidLeave(() => {
-		console.log('SettingsPage ionViewDidLeave event fired');
+		console.log('SettingsDetailPage ionViewDidLeave event fired');
 	});
 
 	return (
@@ -58,16 +54,10 @@ function SettingsPage() {
 						<IonBackButton />
 					</IonButtons>
 
-					<IonTitle>Settings</IonTitle>
+					<IonTitle>SettingsDetail</IonTitle>
 				</IonToolbar>
 			</IonHeader>
 			<IonContent fullscreen>
-				<IonButton onClick={() => {
-					router.push('/settings-detail');
-				}}>
-					Go to detail
-				</IonButton>
-
 				<h1>Test top</h1>
 				<h1>Test</h1>
 				<h1>Test</h1>
@@ -90,4 +80,4 @@ function SettingsPage() {
 	);
 }
 
-export default SettingsPage;
+export default SettingsDetailPage;

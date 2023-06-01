@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Share } from '@capacitor/share';
 import {
 	IonContent,
@@ -14,6 +15,15 @@ import {
 } from '@ionic/react';
 
 function Tab1Page() {
+	useEffect(() => {
+		console.log('Tab1Page didMount');
+
+		return () => {
+			console.log('Tab1Page unMount');
+		};
+
+	}, []);
+
 	const share = async () => {
 		await Share.share({
 			title: 'Simons YT Channel',

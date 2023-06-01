@@ -10,6 +10,7 @@ import Tabs from '../tabs';
 import Login from '../login';
 import ThirdPartyGames from '../third-party-games';
 import Settings from '../settings';
+import SettingsDetail from '../settings-detail';
 
 function App() {
 	return (
@@ -17,9 +18,9 @@ function App() {
 			<IonReactRouter>
 				{/* An IonRouterOutlet should only contain Routes or Redirects. */}
 				<IonRouterOutlet>
-					<Route path='/layout-route'>
+					{/* <Route path='/layout-route'>
 						<LayoutRoute />
-					</Route>
+					</Route> */}
 
 					<Route path='/tabs'>
 						<Tabs />
@@ -37,8 +38,12 @@ function App() {
 						<Settings />
 					</Route>
 
+					<Route path='/settings-detail'>
+						<SettingsDetail />
+					</Route>
+
 					<Route exact path='/'>
-						<Redirect to='/layout-route' />
+						<Redirect to='/tabs/tab1' />
 					</Route>
 
 					{/* A common routing use case is to provide a "fallback" route to be rendered in the event the location navigated to does not match any of the routes defined. */}
