@@ -134,8 +134,6 @@ function withPage(pageObject) {
 		}
 
 		function _handleOnBack() {
-			console.log('_handleOnBack_handleOnBack_handleOnBack');
-
 			if (router.canGoBack()) {
 				router.goBack();
 			}
