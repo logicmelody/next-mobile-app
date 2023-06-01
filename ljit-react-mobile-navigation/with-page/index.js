@@ -71,7 +71,6 @@ function withPage(pageObject) {
 			pageStackCount,
 			onBack,
 			navigationType,
-			navigationTitle,
 			hiddenToolbarRightButtonIds,
 		} = props;
 
@@ -84,7 +83,7 @@ function withPage(pageObject) {
 		} = pageObject;
 
 		const {
-			routeOptions,
+			routeOptions = {},
 		} = router.routeInfo;
 
 		useIonViewWillEnter(() => {
@@ -115,7 +114,10 @@ function withPage(pageObject) {
 		}) {
 			switch (navigationType) {
 				case 'push': {
-					router.push(page, 'forward', 'push', passProps);
+					router.push(page, 'forward', 'push', {
+						...passProps,
+						navigationTitle,
+					});
 
 					return;
 				}
@@ -223,6 +225,22 @@ function withPage(pageObject) {
 		// 		button.component : <Icon icon={button.icon} />;
 		// }
 
+		function _renderToolbar() {
+			const {
+				navigationTitle,
+			} = routeOptions;
+
+			return (
+				<IonToolbar>
+					{_renderBackButton()}
+
+					<IonTitle>
+						{navigationTitle || title}
+					</IonTitle>
+				</IonToolbar>
+			);
+		}
+
 		return (
 			<IonPage>
 				<IonHeader
@@ -231,13 +249,7 @@ function withPage(pageObject) {
 					collapse='fade'
 				>
 					{/* // NOTE: 如果放在 IonHeader 或是 IonFooter，位置會被固定，如果放在 IonContent 中，會跟著 page scoll */}
-					<IonToolbar>
-						{_renderBackButton()}
-
-						<IonTitle>
-							{navigationTitle || title}
-						</IonTitle>
-					</IonToolbar>
+					{_renderToolbar()}
 				</IonHeader>
 
 				<IonContent fullscreen>

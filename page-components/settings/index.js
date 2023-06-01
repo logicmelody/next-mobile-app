@@ -67,6 +67,7 @@ function SettingsPage({
 				onNavigate({
 					page: SETTINGS_DETAIL,
 					navigationType: 'push',
+					navigationTitle: '詳細設定',
 					passProps: {
 						selectedId: 100,
 						selectedName: '123',
