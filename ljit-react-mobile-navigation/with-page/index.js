@@ -49,7 +49,6 @@ function withPage(pageObject) {
 	let onNavigatorEvent = () => {};
 
 	const propTypes = {
-		pageStackCount: PropTypes.number,
 		navigationType: PropTypes.string,
 		navigationTitle: PropTypes.string,
 		hiddenToolbarRightButtonIds: PropTypes.array,
@@ -57,7 +56,6 @@ function withPage(pageObject) {
 	};
 
 	const defaultProps = {
-		pageStackCount: 1,
 		navigationType: '',
 		navigationTitle: '',
 		hiddenToolbarRightButtonIds: [],
@@ -70,7 +68,6 @@ function withPage(pageObject) {
 		const [_navigationTitle, setNavigationTitle] = useState('');
 
 		const {
-			pageStackCount,
 			onBack,
 			navigationType,
 			hiddenToolbarRightButtonIds,
@@ -146,50 +143,6 @@ function withPage(pageObject) {
 
 			onNavigatorEvent(event);
 		}
-
-		// function _renderToolbar() {
-		// 	return (
-		// 		<Toolbar>
-		// 			{_renderBackButton(navigationType)}
-
-		// 			<div
-		// 				className="center"
-		// 				onClick={() => {
-		// 					_handleNavigatorEvent('on-click-title');
-		// 				}}
-		// 			>
-		// 				{_navigationTitle || navigationTitle || title}
-		// 			</div>
-
-		// 			{_renderRightButtons(toolbarButtons.rightButtons)}
-		// 		</Toolbar>
-		// 	);
-		// }
-
-		// function _renderBackButton() {
-		// 	if (navigationType === 'push' || pageStackCount > 1) {
-		// 		return (
-		// 			<div className='left'>
-		// 				<BackButton onClick={() => {
-		// 					onBack();
-		// 					_handleNavigatorEvent('on-back');
-		// 				}} />
-		// 			</div>
-		// 		);
-
-		// 	} else if (navigationType === 'showModal') {
-		// 		return (
-		// 			<div className='left'>
-		// 				<ToolbarButton onClick={() => {
-		// 					onBack();
-		// 					_handleNavigatorEvent('on-back');
-		// 				}}>
-		// 					关闭
-		// 				</ToolbarButton>
-		// 			</div >
-		// 		);
-		// 	}
-		// }
 
 		// function _renderRightButtons(rightButtons) {
 		// 	if (rightButtons && rightButtons.length > 0) {
