@@ -28,7 +28,8 @@ import Toolbar from './toolbar';
 		component,
 
 		// Optional
-		isToolbarHidden: true / false,
+		hasHeader: true / false,
+		header: 自己的 header component
 
 		toolbarButtons: {
 			leftButtons: [
@@ -46,18 +47,6 @@ import Toolbar from './toolbar';
 	}
 */
 function withPage(pageObject) {
-	const propTypes = {
-		navigationType: PropTypes.string,
-		navigationTitle: PropTypes.string,
-		hiddenToolbarRightButtonIds: PropTypes.array,
-	};
-
-	const defaultProps = {
-		navigationType: '',
-		navigationTitle: '',
-		hiddenToolbarRightButtonIds: [],
-	};
-
 	function WithPageComponent(props) {
 		const router = useIonRouter();
 		const onNavigatorEvent = useRef();
@@ -65,15 +54,11 @@ function withPage(pageObject) {
 		const [_navigationTitle, setNavigationTitle] = useState('');
 
 		const {
-			navigationType,
-			hiddenToolbarRightButtonIds,
-		} = props;
-
-		const {
 			title,
-			hasBackButton = true,
 			component: PageComponent,
-			isToolbarHidden,
+			header: HeaderComponent,
+			hasBackButton = true,
+			hasHeader = true,
 			toolbarButtons = {},
 		} = pageObject;
 
@@ -176,20 +161,31 @@ function withPage(pageObject) {
 		// 		button.component : <Icon icon={button.icon} />;
 		// }
 
+		function _renderHeader() {
+			if (!hasHeader) {
+				return null;
+			}
+
+			return (
+				<IonHeader>
+					{/* // NOTE: 如果放在 IonHeader 或是 IonFooter，位置會被固定，如果放在 IonContent 中，會跟著 page scoll */}
+					{
+						HeaderComponent ||
+						(
+							<Toolbar
+								navigationTitle={navigationTitle}
+								title={title}
+								hasBackButton={hasBackButton}
+							/>
+						)
+					}
+				</IonHeader>
+			);
+		}
+
 		return (
 			<IonPage>
-				<IonHeader
-					translucent
-					className='ion-no-border'
-					collapse='fade'
-				>
-					{/* // NOTE: 如果放在 IonHeader 或是 IonFooter，位置會被固定，如果放在 IonContent 中，會跟著 page scoll */}
-					<Toolbar
-						navigationTitle={navigationTitle}
-						title={title}
-						hasBackButton={hasBackButton}
-					/>
-				</IonHeader>
+				{_renderHeader()}
 
 				<IonContent fullscreen>
 					<PageComponent
@@ -212,9 +208,6 @@ function withPage(pageObject) {
 			</IonPage>
 		);
 	}
-
-	WithPageComponent.propTypes = propTypes;
-	WithPageComponent.defaultProps = defaultProps;
 
 	return WithPageComponent;
 }

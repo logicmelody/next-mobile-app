@@ -5,6 +5,7 @@ import { NavigationKeyEnums } from '../';
 import Tab1 from '../../page-components/tab1';
 import Tab2 from '../../page-components/tab2';
 import Tab3 from '../../page-components/tab3';
+import Tab3Header from '../../components/tab3-header';
 
 const {
 	TABS,
@@ -14,24 +15,27 @@ const {
 } = NavigationKeyEnums;
 
 registerPage(TAB1, {
+	tabLebal: 'TAB1',
 	component: Tab1,
 	title: 'TAB1',
 	hasBackButton: false,
-	tabLebal: 'TAB1',
 });
 
 registerPage(TAB2, {
+	tabLebal: 'TAB2',
 	component: Tab2,
 	title: 'TAB2',
 	hasBackButton: false,
-	tabLebal: 'TAB2',
 });
 
 registerPage(TAB3, {
+	tabLebal: 'TAB3',
 	component: Tab3,
 	title: 'TAB3',
 	hasBackButton: false,
-	tabLebal: 'TAB3',
+	header: (
+		<Tab3Header />
+	),
 });
 
 const Tabs = {
