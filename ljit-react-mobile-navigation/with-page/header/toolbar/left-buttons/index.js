@@ -9,16 +9,19 @@ import {
 const propTypes = {
 	hasBackButton: PropTypes.bool,
 	data: PropTypes.array,
+	onClickButton: PropTypes.func,
 };
 
 const defaultProps = {
 	hasBackButton: true,
 	data: [],
+	onClickButton: () => {},
 };
 
 function LeftButtons({
 	hasBackButton,
 	data,
+	onClickButton,
 }) {
 	function _renderButtons() {
 		return data.map(button => {
@@ -31,7 +34,7 @@ function LeftButtons({
 				<IonButton
 					key={id}
 					onClick={() => {
-						console.log(`Click ${id}`);
+						onClickButton(id);
 					}}
 				>
 					{component}

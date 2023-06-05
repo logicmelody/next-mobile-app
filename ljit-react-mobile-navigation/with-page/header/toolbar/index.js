@@ -13,6 +13,7 @@ const propTypes = {
 	title: PropTypes.string,
 	hasBackButton: PropTypes.bool,
 	toolbarButtons: PropTypes.object,
+	onClickButton: PropTypes.func,
 };
 
 const defaultProps = {
@@ -20,6 +21,7 @@ const defaultProps = {
 	title: '',
 	hasBackButton: true,
 	toolbarButtons: {},
+	onClickButton: () => {},
 };
 
 function Toolbar({
@@ -27,6 +29,7 @@ function Toolbar({
 	title,
 	hasBackButton,
 	toolbarButtons,
+	onClickButton,
 }) {
 	const {
 		leftButtons = [],
@@ -38,6 +41,7 @@ function Toolbar({
 			<LeftButtons
 				hasBackButton={hasBackButton}
 				data={leftButtons}
+				onClickButton={onClickButton}
 			/>
 
 			<IonTitle>
@@ -46,6 +50,7 @@ function Toolbar({
 
 			<RightButtons
 				data={rightButtons}
+				onClickButton={onClickButton}
 			/>
 		</IonToolbar>
 	);

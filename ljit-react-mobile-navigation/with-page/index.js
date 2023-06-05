@@ -176,6 +176,9 @@ function withPage(pageObject) {
 					onClickTitle={() => {
 						_handleNavigatorEvent('on-click-title');
 					}}
+					onClickButton={(id) => {
+						_handleNavigatorEvent(id);
+					}}
 				/>
 			);
 		}

@@ -7,14 +7,17 @@ import {
 
 const propTypes = {
 	data: PropTypes.array,
+	onClickButton: PropTypes.func,
 };
 
 const defaultProps = {
 	data: [],
+	onClickButton: () => {},
 };
 
 function RightButtons({
 	data,
+	onClickButton,
 }) {
 	function _renderButtons() {
 		return data.map(button => {
@@ -27,7 +30,7 @@ function RightButtons({
 				<IonButton
 					key={id}
 					onClick={() => {
-						console.log(`Click ${id}`);
+						onClickButton(id);
 					}}
 				>
 					{component}
