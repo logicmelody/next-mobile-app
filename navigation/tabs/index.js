@@ -7,6 +7,7 @@ import { registerPage } from '../../ljit-react-mobile-navigation';
 import { NavigationKeyEnums } from '../';
 
 import RedHeader from '../../components/red-header';
+import MobileMenuItemDButton from '../../components/mobile-menu-item-d-button';
 
 import Tab1 from '../../page-components/tab1';
 import Tab2 from '../../page-components/tab2';
@@ -32,12 +33,12 @@ registerPage(TAB2, {
 	title: 'TAB2',
 	hasBackButton: false,
 	toolbarButtons: {
-		// leftButtons: [
-		// 	{
-		// 		id: 'd',
-		// 		component: <MobileMenuItemCreateChat />,
-		// 	}
-		// ],
+		leftButtons: [
+			{
+				id: 'd',
+				component: <MobileMenuItemDButton />,
+			},
+		],
 		rightButtons: [
 			{
 				id: 'end-1',

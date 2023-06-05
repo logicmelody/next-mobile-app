@@ -3,11 +3,9 @@ import PropTypes from 'prop-types';
 import {
 	IonToolbar,
 	IonTitle,
-	IonButtons,
-	IonButton,
-	IonBackButton,
 } from '@ionic/react';
 
+import LeftButtons from './left-buttons';
 import RightButtons from './right-buttons';
 
 const propTypes = {
@@ -35,19 +33,12 @@ function Toolbar({
 		rightButtons = [],
 	} = toolbarButtons;
 
-	function _renderBackButton() {
-		if (hasBackButton) {
-			return (
-				<IonButtons slot='start'>
-					<IonBackButton />
-				</IonButtons>
-			);
-		}
-	}
-
 	return (
 		<IonToolbar>
-			{_renderBackButton()}
+			<LeftButtons
+				hasBackButton={hasBackButton}
+				data={leftButtons}
+			/>
 
 			<IonTitle>
 				{navigationTitle || title}
