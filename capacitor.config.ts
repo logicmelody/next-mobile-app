@@ -6,7 +6,7 @@ const config: CapacitorConfig = {
 	appName: 'next-mobile-app',
 	webDir: 'out',
 	server: {
-		url: 'http://192.168.10.29:3000',
+		url: 'http://192.168.10.30:3000',
 		cleartext: true
 	}
 };
