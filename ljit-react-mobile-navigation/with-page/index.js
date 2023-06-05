@@ -19,7 +19,7 @@ import {
 	useIonViewWillLeave,
 } from '@ionic/react';
 
-import Toolbar from './toolbar';
+import Header from './header';
 
 /*
 	pageObject = {
@@ -167,29 +167,14 @@ function withPage(pageObject) {
 			}
 
 			return (
-				<IonHeader>
-					{/* // NOTE: 如果放在 IonHeader 或是 IonFooter，位置會被固定，如果放在 IonContent 中，會跟著 page scoll */}
-					{_renderHeaderContent()}
-				</IonHeader>
-			);
-		}
-
-		function _renderHeaderContent() {
-			if (HeaderComponent) {
-				return (
-					<HeaderComponent
-						onClickTitle={() => {
-							_handleNavigatorEvent('on-click-title');
-						}}
-					/>
-				);
-			}
-
-			return (
-				<Toolbar
+				<Header
 					navigationTitle={navigationTitle}
 					title={title}
 					hasBackButton={hasBackButton}
+					HeaderComponent={HeaderComponent}
+					onClickTitle={() => {
+						_handleNavigatorEvent('on-click-title');
+					}}
 				/>
 			);
 		}
