@@ -37,6 +37,7 @@ const {
 
 const propTypes = {
 	setOnNavigatorEvent: PropTypes.func.isRequired,
+	onChangeNavigationTitle: PropTypes.func.isRequired,
 };
 
 /*
@@ -48,6 +49,7 @@ All the lifecycle methods in React (componentDidMount, componentWillUnmount, etc
 */
 function Tab2Page({
 	setOnNavigatorEvent,
+	onChangeNavigationTitle,
 }) {
 	const [count, setCount] = useState(0);
 
@@ -109,6 +111,12 @@ function Tab2Page({
 				setCount(prevCount => prevCount + 1);
 			}}>
 				Add
+			</IonButton>
+
+			<IonButton onClick={() => {
+				onChangeNavigationTitle('Tab2 測試')
+			}}>
+				Change Title
 			</IonButton>
 
 			<h1>Test</h1>
