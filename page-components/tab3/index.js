@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {
 	IonContent,
@@ -21,12 +21,30 @@ const {
 
 const propTypes = {
 	onNavigate: PropTypes.func.isRequired,
+	setOnNavigatorEvent: PropTypes.func.isRequired,
 };
 
 function Tab3Page({
 	onNavigate,
+	setOnNavigatorEvent,
 }) {
 	const [count, setCount] = useState(0);
+
+	useEffect(() => {
+		setOnNavigatorEvent(_onNavigatorEvent);
+	}, [setOnNavigatorEvent]);
+
+	function _onNavigatorEvent(event) {
+		switch (event) {
+			case 'on-click-title':
+				console.log('Tab3Page on-click-title');
+
+				break;
+
+			default:
+				break;
+		}
+	}
 
 	return (
 		<>

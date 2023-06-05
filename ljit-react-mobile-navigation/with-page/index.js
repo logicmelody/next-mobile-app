@@ -169,17 +169,28 @@ function withPage(pageObject) {
 			return (
 				<IonHeader>
 					{/* // NOTE: 如果放在 IonHeader 或是 IonFooter，位置會被固定，如果放在 IonContent 中，會跟著 page scoll */}
-					{
-						HeaderComponent ||
-						(
-							<Toolbar
-								navigationTitle={navigationTitle}
-								title={title}
-								hasBackButton={hasBackButton}
-							/>
-						)
-					}
+					{_renderHeaderContent()}
 				</IonHeader>
+			);
+		}
+
+		function _renderHeaderContent() {
+			if (HeaderComponent) {
+				return (
+					<HeaderComponent
+						onClickTitle={() => {
+							_handleNavigatorEvent('on-click-title');
+						}}
+					/>
+				);
+			}
+
+			return (
+				<Toolbar
+					navigationTitle={navigationTitle}
+					title={title}
+					hasBackButton={hasBackButton}
+				/>
 			);
 		}
 

@@ -2,10 +2,11 @@ import { registerPage } from '../../ljit-react-mobile-navigation';
 
 import { NavigationKeyEnums } from '../';
 
+import RedHeader from '../../components/red-header';
+
 import Tab1 from '../../page-components/tab1';
 import Tab2 from '../../page-components/tab2';
 import Tab3 from '../../page-components/tab3';
-import Tab3Header from '../../components/tab3-header';
 
 const {
 	TABS,
@@ -33,9 +34,7 @@ registerPage(TAB3, {
 	component: Tab3,
 	title: 'TAB3',
 	hasBackButton: false,
-	header: (
-		<Tab3Header />
-	),
+	header: RedHeader,
 });
 
 const Tabs = {
