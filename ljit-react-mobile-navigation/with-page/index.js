@@ -172,7 +172,7 @@ function withPage(pageObject) {
 					title={_navigationTitle || title}
 					hasBackButton={hasBackButton}
 					HeaderComponent={HeaderComponent}
-					onClickTitxle={() => {
+					onClickTitle={() => {
 						_handleNavigatorEvent('on-click-title');
 					}}
 				/>
