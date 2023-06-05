@@ -1,17 +1,7 @@
 import React, { useState, useRef } from 'react';
-import PropTypes from 'prop-types';
 import {
 	IonContent,
-	IonHeader,
 	IonPage,
-	IonFooter,
-	IonToolbar,
-	IonTitle,
-	IonButtons,
-	IonButton,
-	IonBackButton,
-	IonSearchbar,
-	IonProgressBar,
 	useIonRouter,
 	useIonViewDidEnter,
 	useIonViewDidLeave,
@@ -35,14 +25,11 @@ import Header from './header';
 			leftButtons: [
 				{
 					id: 'wallet',
-					icon: 'fa-wallet', (Onsen UI 提供的 icon：FontAwesome Ionicons MaterialDesignIconicFont)
 					component: (自己定義要 render 的 component)
 				}
 			],
 
-			rightButtons: [
-
-			],
+			rightButtons: [],
 		},
 	}
 */
@@ -130,36 +117,6 @@ function withPage(pageObject) {
 
 			onNavigatorEvent.current(event);
 		}
-
-		// function _renderRightButtons(rightButtons) {
-		// 	if (rightButtons && rightButtons.length > 0) {
-		// 		return (
-		// 			<div className="right">
-		// 				{
-		// 					rightButtons
-		// 						.filter(button => !hiddenToolbarRightButtonIds.includes(button.id))
-		// 						.map((button, index) => {
-		// 							return (
-		// 								<ToolbarButton
-		// 									key={button.id + index}
-		// 									onClick={() => {
-		// 										_handleNavigatorEvent(button.id);
-		// 									}}
-		// 								>
-		// 									{_renderButtonContent(button)}
-		// 								</ToolbarButton>
-		// 							);
-		// 						})
-		// 				}
-		// 			</div>
-		// 		);
-		// 	}
-		// }
-
-		// function _renderButtonContent(button) {
-		// 	return button.component ?
-		// 		button.component : <Icon icon={button.icon} />;
-		// }
 
 		function _renderHeader() {
 			if (!hasHeader) {

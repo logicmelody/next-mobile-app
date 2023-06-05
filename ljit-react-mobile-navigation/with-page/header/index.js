@@ -3,7 +3,7 @@ import {
 	IonHeader,
 } from '@ionic/react';
 
-import Toolbar from './toolbar';
+import Toolbar from '../toolbar';
 
 const propTypes = {
 	navigationTitle: PropTypes.string,
