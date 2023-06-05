@@ -1,3 +1,7 @@
+import {
+	IonButton,
+} from '@ionic/react';
+
 import { registerPage } from '../../ljit-react-mobile-navigation';
 
 import { NavigationKeyEnums } from '../';
@@ -27,6 +31,32 @@ registerPage(TAB2, {
 	component: Tab2,
 	title: 'TAB2',
 	hasBackButton: false,
+	toolbarButtons: {
+		// leftButtons: [
+		// 	{
+		// 		id: 'd',
+		// 		component: <MobileMenuItemCreateChat />,
+		// 	}
+		// ],
+		rightButtons: [
+			{
+				id: 'end-1',
+				component: (
+					<IonButton>
+						end 1
+					</IonButton>
+				),
+			},
+			{
+				id: 'end-2',
+				component: (
+					<IonButton>
+						end 2
+					</IonButton>
+				),
+			},
+		],
+	},
 });
 
 registerPage(TAB3, {

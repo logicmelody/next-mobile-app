@@ -2,23 +2,10 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import {
-	IonContent,
-	IonHeader,
-	IonPage,
-	IonFooter,
-	IonToolbar,
-	IonButtons,
 	IonButton,
-	IonSearchbar,
-	IonProgressBar,
 	IonFab,
 	IonFabButton,
 	IonIcon,
-	useIonRouter,
-	useIonViewDidEnter,
-	useIonViewDidLeave,
-	useIonViewWillEnter,
-	useIonViewWillLeave,
 } from '@ionic/react';
 import {
 	camera,
@@ -136,98 +123,6 @@ function Tab2Page({
 			<h1>Test</h1>
 			<h1>Test</h1>
 		</>
-
-		// <IonPage>
-		// 	<IonHeader
-		// 		translucent
-		// 		className='ion-no-border'
-		// 		collapse='fade'
-		// 	>
-		// 		{/* // NOTE: 如果放在 IonHeader 或是 IonFooter，位置會被固定，如果放在 IonContent 中，會跟著 page scoll */}
-		// 		<IonToolbar>
-		// 			<IonButtons slot='start'>
-		// 				<StyledMenuButton
-		// 					onClick={() => {
-		// 						console.log('Click D');
-		// 					}}
-		// 				>
-		// 					D
-		// 				</StyledMenuButton>
-
-		// 				<IonButton onClick={() => {
-		// 					console.log('Click Start 2');
-		// 				}}>
-		// 					Start 2
-		// 				</IonButton>
-		// 			</IonButtons>
-
-		// 			<StyledMenuTitle>
-		// 				<IonButton onClick={() => {
-		// 					console.log('Click title');
-		// 				}}>
-		// 					This is title
-		// 				</IonButton>
-		// 			</StyledMenuTitle>
-
-		// 			<IonButtons slot='end'>
-		// 				<IonButton> end 1 </IonButton>
-		// 				<IonButton> end 2 </IonButton>
-		// 			</IonButtons>
-		// 		</IonToolbar>
-
-		// 		<IonToolbar>
-		// 			<IonSearchbar />
-		// 		</IonToolbar>
-
-		// 		<IonProgressBar type='indeterminate'></IonProgressBar>
-		// 	</IonHeader>
-		// 	<IonContent fullscreen>
-		// 		<IonFab vertical='bottom' horizontal='end' slot='fixed'>
-		// 			<IonFabButton
-		// 				onClick={() => {
-		// 					console.log('Take photo');
-		// 				}}
-		// 			>
-		// 				<IonIcon icon={camera}></IonIcon>
-		// 			</IonFabButton>
-		// 		</IonFab>
-
-		// 		<h1>{`count = ${count}`}</h1>
-
-		// 		<IonButton onClick={() => {
-		// 			setCount(prevCount => prevCount + 1);
-		// 		}}>
-		// 			Add
-		// 		</IonButton>
-
-		// 		<h1>Test</h1>
-		// 		<h1>Test</h1>
-		// 		<h1>Test</h1>
-		// 		<h1>Test</h1>
-		// 		<h1>Test</h1>
-		// 		<h1>Test</h1>
-		// 		<h1>Test</h1>
-		// 		<h1>Test</h1>
-		// 		<h1>Test</h1>
-		// 		<h1>Test</h1>
-		// 		<h1>Test</h1>
-		// 		<h1>Test</h1>
-		// 		<h1>Test</h1>
-		// 		<h1>Test</h1>
-		// 		<h1>Test</h1>
-		// 		<h1>Test</h1>
-		// 	</IonContent>
-
-		// 	<IonFooter>
-		// 		<IonToolbar>
-		// 			<IonButton onClick={() => {
-		// 				router.push(THIRD_PARTY_GAMES);
-		// 			}}>
-		// 				Go to ThirdPartyGamesPage
-		// 			</IonButton>
-		// 		</IonToolbar>
-		// 	</IonFooter>
-		// </IonPage>
 	);
 }
 

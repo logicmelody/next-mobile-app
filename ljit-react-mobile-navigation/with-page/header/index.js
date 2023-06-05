@@ -9,6 +9,7 @@ const propTypes = {
 	navigationTitle: PropTypes.string,
 	title: PropTypes.string,
 	hasBackButton: PropTypes.bool,
+	toolbarButtons: PropTypes.object,
 	HeaderComponent: PropTypes.elementType,
 	onClickTitle: PropTypes.func,
 };
@@ -17,6 +18,7 @@ const defaultProps = {
 	navigationTitle: '',
 	title: '',
 	hasBackButton: true,
+	toolbarButtons: {},
 	onClickTitle: () => {},
 };
 
@@ -24,6 +26,7 @@ function Header({
 	navigationTitle,
 	title,
 	hasBackButton,
+	toolbarButtons,
 	HeaderComponent,
 	onClickTitle,
 }) {
@@ -41,6 +44,7 @@ function Header({
 				navigationTitle={navigationTitle}
 				title={title}
 				hasBackButton={hasBackButton}
+				toolbarButtons={toolbarButtons}
 			/>
 		);
 	}
