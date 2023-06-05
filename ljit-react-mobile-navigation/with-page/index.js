@@ -60,8 +60,7 @@ function withPage(pageObject) {
 
 	function WithPageComponent(props) {
 		const router = useIonRouter();
-
-		const onNavigatorEvent = useRef(() => {});
+		const onNavigatorEvent = useRef();
 
 		const [_navigationTitle, setNavigationTitle] = useState('');
 
