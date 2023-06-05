@@ -80,7 +80,6 @@ function withPage(pageObject) {
 			page,
 			navigationType,
 			navigationTitle,
-			// hiddenToolbarRightButtonIds = [],
 			passProps = {},
 		}) {
 			switch (navigationType) {
