@@ -1,4 +1,4 @@
-import React, { useState, } from 'react';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import {
 	IonContent,
@@ -46,8 +46,6 @@ import Toolbar from './toolbar';
 	}
 */
 function withPage(pageObject) {
-	let onNavigatorEvent = () => {};
-
 	const propTypes = {
 		navigationType: PropTypes.string,
 		navigationTitle: PropTypes.string,
@@ -62,6 +60,8 @@ function withPage(pageObject) {
 
 	function WithPageComponent(props) {
 		const router = useIonRouter();
+
+		const onNavigatorEvent = useRef(() => {});
 
 		const [_navigationTitle, setNavigationTitle] = useState('');
 
@@ -140,11 +140,11 @@ function withPage(pageObject) {
 		}
 
 		function _handleNavigatorEvent(event) {
-			if (!onNavigatorEvent) {
+			if (!onNavigatorEvent.current) {
 				return;
 			}
 
-			onNavigatorEvent(event);
+			onNavigatorEvent.current(event);
 		}
 
 		// function _renderRightButtons(rightButtons) {
@@ -199,7 +199,7 @@ function withPage(pageObject) {
 								return;
 							}
 
-							onNavigatorEvent = func;
+							onNavigatorEvent.current = func;
 						}}
 						onNavigate={_handleOnNavigate}
 						onBack={_handleOnBack}
