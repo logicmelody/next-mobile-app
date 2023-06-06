@@ -31,20 +31,19 @@ function Tab3Page({
 	const [count, setCount] = useState(0);
 
 	useEffect(() => {
-		setOnNavigatorEvent(_onNavigatorEvent);
+		setOnNavigatorEvent((event) => {
+			switch (event) {
+				case 'on-click-title':
+					console.log('Tab3Page on-click-title');
+
+					break;
+
+				default:
+					break;
+			}
+		});
+
 	}, [setOnNavigatorEvent]);
-
-	function _onNavigatorEvent(event) {
-		switch (event) {
-			case 'on-click-title':
-				console.log('Tab3Page on-click-title');
-
-				break;
-
-			default:
-				break;
-		}
-	}
 
 	return (
 		<>
