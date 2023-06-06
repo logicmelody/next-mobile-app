@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import {
 	IonContent,
 	IonPage,
@@ -39,6 +39,15 @@ function withPage(pageObject) {
 		const onNavigatorEvent = useRef();
 
 		const [_navigationTitle, setNavigationTitle] = useState('');
+
+		const memoizedSetOnNavigatorEvent = useCallback((func) => {
+			if (typeof func !== 'function') {
+				return;
+			}
+
+			onNavigatorEvent.current = func;
+
+		}, []);
 
 		const {
 			title,
@@ -145,13 +154,7 @@ function withPage(pageObject) {
 
 				<IonContent fullscreen>
 					<PageComponent
-						setOnNavigatorEvent={(func) => {
-							if (typeof func !== 'function') {
-								return;
-							}
-
-							onNavigatorEvent.current = func;
-						}}
+						setOnNavigatorEvent={memoizedSetOnNavigatorEvent}
 						onNavigate={_handleOnNavigate}
 						onBack={_handleOnBack}
 						onChangeNavigationTitle={(title) => {

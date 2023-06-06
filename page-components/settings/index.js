@@ -29,35 +29,34 @@ function SettingsPage({
 	}, []);
 
 	useEffect(() => {
-		setOnNavigatorEvent(_onNavigatorEvent);
+		setOnNavigatorEvent((event) => {
+			switch (event) {
+				case 'on-view-will-enter':
+					console.log('SettingsPage on-view-will-enter');
+
+					break;
+
+				case 'on-view-did-enter':
+					console.log('SettingsPage on-view-did-enter');
+
+					break;
+
+				case 'on-view-will-leave':
+					console.log('SettingsPage on-view-will-leave');
+
+					break;
+
+				case 'on-view-did-leave':
+					console.log('SettingsPage on-view-did-leave');
+
+					break;
+
+				default:
+					break;
+			};
+		});
+
 	}, [setOnNavigatorEvent]);
-
-	function _onNavigatorEvent(event) {
-		switch (event) {
-			case 'on-view-will-enter':
-				console.log('SettingsPage on-view-will-enter');
-
-				break;
-
-			case 'on-view-did-enter':
-				console.log('SettingsPage on-view-did-enter');
-
-				break;
-
-			case 'on-view-will-leave':
-				console.log('SettingsPage on-view-will-leave');
-
-				break;
-
-			case 'on-view-did-leave':
-				console.log('SettingsPage on-view-did-leave');
-
-				break;
-
-			default:
-				break;
-		}
-	}
 
 	return (
 		<>
