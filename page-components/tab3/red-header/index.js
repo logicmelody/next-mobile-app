@@ -5,21 +5,24 @@ import {
 } from './styles';
 
 const propTypes = {
+	title: PropTypes.string,
 	onClickTitle: PropTypes.func,
 };
 
 const defaultProps = {
+	title: '',
 	onClickTitle: () => {},
 };
 
 function RedHeader({
+	title,
 	onClickTitle,
 }) {
 	return (
 		<StyledMenuTitle
 			onClick={onClickTitle}
 		>
-			<h1>RedHeader</h1>
+			<h1>{title}</h1>
 		</StyledMenuTitle>
 	);
 }

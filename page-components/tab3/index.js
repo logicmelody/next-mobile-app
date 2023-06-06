@@ -30,8 +30,23 @@ function Tab3Page({
 	useEffect(() => {
 		setOnNavigatorEvent((event) => {
 			switch (event) {
-				case 'on-click-title':
-					console.log('Tab3Page on-click-title');
+				case 'on-view-will-enter':
+					console.log('Tab3Page on-view-will-enter');
+
+					break;
+
+				case 'on-view-did-enter':
+					console.log('Tab3Page on-view-did-enter');
+
+					break;
+
+				case 'on-view-will-leave':
+					console.log('Tab3Page on-view-will-leave');
+
+					break;
+
+				case 'on-view-did-leave':
+					console.log('Tab3Page on-view-did-leave');
 
 					break;
 
@@ -45,13 +60,16 @@ function Tab3Page({
 	useEffect(() => {
 		onRenderToolbarHeader((
 			<RedHeader
+				title='Count++'
 				onClickTitle={() => {
 					console.log('Click RedHeader');
+
+					setCount(count + 1);
 				}}
 			/>
 		));
 
-	}, [onRenderToolbarHeader]);
+	}, [onRenderToolbarHeader, count]);
 
 	return (
 		<>
