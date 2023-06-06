@@ -11,12 +11,14 @@ import MobileMenuItemDButton from '../../components/mobile-menu-item-d-button';
 import Tab1 from '../../page-components/tab1';
 import Tab2 from '../../page-components/tab2';
 import Tab3 from '../../page-components/tab3';
+import Tab4 from '../../page-components/tab4';
 
 const {
 	TABS,
 	TAB1,
 	TAB2,
 	TAB3,
+	TAB4,
 } = NavigationKeyEnums;
 
 registerPage(TAB1, {
@@ -66,12 +68,21 @@ registerPage(TAB3, {
 	hasBackButton: false,
 });
 
+registerPage(TAB4, {
+	tabLebal: 'TAB4',
+	component: Tab4,
+	title: 'TAB4',
+	hasBackButton: false,
+	hasHeader: false,
+});
+
 const Tabs = {
 	path: TABS,
 	tabPages: [
 		TAB1,
 		TAB2,
 		TAB3,
+		TAB4,
 	],
 };
 

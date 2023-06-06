@@ -23,6 +23,7 @@ const {
 	TAB1,
 	TAB2,
 	TAB3,
+	TAB4,
 } = NavigationKeyEnums;
 
 function TabsApp({
@@ -81,6 +82,13 @@ function TabsApp({
 					<IonIcon aria-hidden='true' icon={square} />
 					<IonLabel>
 						Tab 3 {TAB3 === pathname ? 'Selected' : ''}
+					</IonLabel>
+				</IonTabButton>
+
+				<IonTabButton tab='tab4' href={TAB4}>
+					<IonIcon aria-hidden='true' icon={square} />
+					<IonLabel>
+						Tab 4 {TAB4 === pathname ? 'Selected' : ''}
 					</IonLabel>
 				</IonTabButton>
 			</IonTabBar>

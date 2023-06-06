@@ -19,7 +19,6 @@ import Header from './header';
 
 		// Optional
 		hasHeader: true / false,
-		header: 自己的 header component
 
 		toolbarButtons: {
 			leftButtons: [

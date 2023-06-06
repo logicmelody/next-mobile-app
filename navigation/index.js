@@ -9,6 +9,7 @@ export const NavigationKeyEnums = {
 	TAB1: '/tabs/tab1',
 	TAB2: '/tabs/tab2',
 	TAB3: '/tabs/tab3',
+	TAB4: '/tabs/tab4',
 
 	THIRD_PARTY_GAMES: '/third-party-games',
 };
