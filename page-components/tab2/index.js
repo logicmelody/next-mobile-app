@@ -50,50 +50,51 @@ function Tab2Page({
 	}, []);
 
 	useEffect(() => {
-		setOnNavigatorEvent(_onNavigatorEvent);
-	}, [setOnNavigatorEvent]);
+		setOnNavigatorEvent((event) => {
+			switch (event) {
+				case 'on-view-will-enter':
+					console.log('Tab2Page on-view-will-enter');
 
-	function _onNavigatorEvent(event) {
-		switch (event) {
-			case 'on-view-will-enter':
-				console.log('Tab2Page on-view-will-enter');
+					break;
 
-				break;
+				case 'on-view-did-enter':
+					console.log('Tab2Page on-view-did-enter');
 
-			case 'on-view-did-enter':
-				console.log('Tab2Page on-view-did-enter');
+					break;
 
-				break;
+				case 'on-view-will-leave':
+					console.log('Tab2Page on-view-will-leave');
 
-			case 'on-view-will-leave':
-				console.log('Tab2Page on-view-will-leave');
+					break;
 
-				break;
+				case 'on-view-did-leave':
+					console.log('Tab2Page on-view-did-leave');
 
-			case 'on-view-did-leave':
-				console.log('Tab2Page on-view-did-leave');
+					break;
 
-				break;
+				case 'd':
+					console.log('Tab2Page d');
 
-			case 'd':
-				console.log('Tab2Page d');
+					setCount(count + 1);
 
-				break;
+					break;
 
-			case 'end-1':
-				console.log('Tab2Page end-1');
+				case 'end-1':
+					console.log('Tab2Page end-1');
 
-				break;
+					break;
 
-			case 'end-2':
-				console.log('Tab2Page end-2');
+				case 'end-2':
+					console.log('Tab2Page end-2');
 
-				break;
+					break;
 
-			default:
-				break;
-		}
-	}
+				default:
+					break;
+			}
+		});
+
+	}, [setOnNavigatorEvent, count]);
 
 	return (
 		<>
