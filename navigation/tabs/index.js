@@ -6,7 +6,6 @@ import { registerPage } from '../../ljit-react-mobile-navigation';
 
 import { NavigationKeyEnums } from '../';
 
-import RedHeader from '../../components/red-header';
 import MobileMenuItemDButton from '../../components/mobile-menu-item-d-button';
 
 import Tab1 from '../../page-components/tab1';
@@ -65,7 +64,6 @@ registerPage(TAB3, {
 	component: Tab3,
 	title: 'TAB3',
 	hasBackButton: false,
-	header: RedHeader,
 });
 
 const Tabs = {

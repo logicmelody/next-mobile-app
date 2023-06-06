@@ -10,7 +10,7 @@ const propTypes = {
 	title: PropTypes.string,
 	hasBackButton: PropTypes.bool,
 	toolbarButtons: PropTypes.object,
-	HeaderComponent: PropTypes.elementType,
+	HeaderComponent: PropTypes.element,
 	onClickTitle: PropTypes.func,
 	onClickButton: PropTypes.func,
 };
@@ -35,11 +35,7 @@ function Header({
 }) {
 	function _renderContent() {
 		if (HeaderComponent) {
-			return (
-				<HeaderComponent
-					onClickTitle={onClickTitle}
-				/>
-			);
+			return HeaderComponent;
 		}
 	
 		return (

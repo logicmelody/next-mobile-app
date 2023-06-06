@@ -39,20 +39,11 @@ function withPage(pageObject) {
 		const onNavigatorEvent = useRef();
 
 		const [_navigationTitle, setNavigationTitle] = useState('');
-
-		const memoizedSetOnNavigatorEvent = useCallback((func) => {
-			if (typeof func !== 'function') {
-				return;
-			}
-
-			onNavigatorEvent.current = func;
-
-		}, []);
+		const [toolbarHeaderComponent, setToolbarHeaderComponent] = useState();
 
 		const {
 			title,
 			component: PageComponent,
-			header: HeaderComponent,
 			hasBackButton = true,
 			hasHeader = true,
 			toolbarButtons = {},
@@ -65,6 +56,20 @@ function withPage(pageObject) {
 		const {
 			navigationTitle,
 		} = routeOptions;
+
+		const memoizedSetOnNavigatorEvent = useCallback((func) => {
+			if (typeof func !== 'function') {
+				return;
+			}
+
+			onNavigatorEvent.current = func;
+
+		}, []);
+
+		const memoizedOnRenderToolbarHeader = useCallback((component) => {
+			setToolbarHeaderComponent(component);
+
+		}, []);
 
 		useIonViewWillEnter(() => {
 			// it's a good method to load data from services.
@@ -135,7 +140,7 @@ function withPage(pageObject) {
 				<Header
 					navigationTitle={navigationTitle}
 					title={_navigationTitle || title}
-					HeaderComponent={HeaderComponent}
+					HeaderComponent={toolbarHeaderComponent}
 					hasBackButton={hasBackButton}
 					toolbarButtons={toolbarButtons}
 					onClickTitle={() => {
@@ -160,6 +165,7 @@ function withPage(pageObject) {
 						onChangeNavigationTitle={(title) => {
 							setNavigationTitle(title);
 						}}
+						onRenderToolbarHeader={memoizedOnRenderToolbarHeader}
 						{...props}
 						{...routeOptions}
 					/>
