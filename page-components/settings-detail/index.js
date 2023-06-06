@@ -33,8 +33,6 @@ function SettingsDetailPage({
 
 	}, []);
 
-	console.log('SettingsDetailPage onBack', onBack);
-
 	return (
 		<>
 			<h1>SettingsDetailPage</h1>
