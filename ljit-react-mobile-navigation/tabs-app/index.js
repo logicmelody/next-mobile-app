@@ -58,6 +58,29 @@ function TabsApp({
 		});
 	}
 
+	function _renderTabs() {
+		return tabs.map(tab => {
+			const page = getPage(tab);
+
+			const {
+				tabLebal,
+			} = page;
+
+			return (
+				<IonTabButton
+					key={tab}
+					tab={tab}
+					href={tab}
+				>
+					<IonIcon aria-hidden='true' icon={triangle} />
+					<IonLabel>
+						{`${tabLebal} ${tab === pathname ? 'Selected' : ''}`}
+					</IonLabel>
+				</IonTabButton>
+			);
+		});
+	}
+
 	return (
 		<IonTabs>
 			<IonRouterOutlet>
@@ -68,32 +91,7 @@ function TabsApp({
 				slot='bottom'
 				mode='ios'
 			>
-				<IonTabButton tab='tab1' href={TAB1}>
-					<IonIcon aria-hidden='true' icon={triangle} />
-					<IonLabel>
-						Tab 1 {TAB1 === pathname ? 'Selected' : ''}
-					</IonLabel>
-				</IonTabButton>
-
-				<IonTabButton tab='tab2' href={TAB2}>
-					<IonButton>
-						Tab 2 {TAB2 === pathname ? 'Selected' : ''}
-					</IonButton>
-				</IonTabButton>
-
-				<IonTabButton tab='tab3' href={TAB3}>
-					<IonIcon aria-hidden='true' icon={square} />
-					<IonLabel>
-						Tab 3 {TAB3 === pathname ? 'Selected' : ''}
-					</IonLabel>
-				</IonTabButton>
-
-				<IonTabButton tab='tab4' href={TAB4}>
-					<IonIcon aria-hidden='true' icon={square} />
-					<IonLabel>
-						Tab 4 {TAB4 === pathname ? 'Selected' : ''}
-					</IonLabel>
-				</IonTabButton>
+				{_renderTabs()}
 			</IonTabBar>
 		</IonTabs>
 	);
