@@ -11,12 +11,6 @@ import {
 	camera,
 } from 'ionicons/icons';
 
-import { NavigationKeyEnums } from '../../navigation';
-
-const {
-	THIRD_PARTY_GAMES,
-} = NavigationKeyEnums;
-
 const propTypes = {
 	setOnNavigatorEvent: PropTypes.func.isRequired,
 	onChangeNavigationTitle: PropTypes.func.isRequired,
