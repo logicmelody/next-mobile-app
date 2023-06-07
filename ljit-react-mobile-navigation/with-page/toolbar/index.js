@@ -10,6 +10,7 @@ import RightButtons from './right-buttons';
 
 const propTypes = {
 	title: PropTypes.string,
+	titleComponent: PropTypes.element,
 	hasBackButton: PropTypes.bool,
 	leftToolbarButtons: PropTypes.array,
 	rightToolbarButtons: PropTypes.array,
@@ -24,10 +25,23 @@ const defaultProps = {
 
 function Toolbar({
 	title,
+	titleComponent,
 	hasBackButton,
 	leftToolbarButtons,
 	rightToolbarButtons,
 }) {
+	function _renderTitle() {
+		if (titleComponent) {
+			return titleComponent;
+		}
+
+		return (
+			<IonTitle>
+				{title}
+			</IonTitle>
+		);
+	}
+
 	return (
 		<IonToolbar>
 			<LeftButtons
@@ -35,9 +49,7 @@ function Toolbar({
 				data={leftToolbarButtons}
 			/>
 
-			<IonTitle>
-				{title}
-			</IonTitle>
+			{_renderTitle()}
 
 			<RightButtons
 				data={rightToolbarButtons}

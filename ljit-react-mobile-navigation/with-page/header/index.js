@@ -7,10 +7,11 @@ import Toolbar from '../toolbar';
 
 const propTypes = {
 	title: PropTypes.string,
+	titleComponent: PropTypes.element,
+	headerComponent: PropTypes.element,
 	hasBackButton: PropTypes.bool,
 	leftToolbarButtons: PropTypes.array,
 	rightToolbarButtons: PropTypes.array,
-	headerComponent: PropTypes.element,
 };
 
 const defaultProps = {
@@ -22,10 +23,11 @@ const defaultProps = {
 
 function Header({
 	title,
+	titleComponent,
+	headerComponent,
 	hasBackButton,
 	leftToolbarButtons,
 	rightToolbarButtons,
-	headerComponent,
 }) {
 	function _renderContent() {
 		if (headerComponent) {
@@ -35,6 +37,7 @@ function Header({
 		return (
 			<Toolbar
 				title={title}
+				titleComponent={titleComponent}
 				hasBackButton={hasBackButton}
 				leftToolbarButtons={leftToolbarButtons}
 				rightToolbarButtons={rightToolbarButtons}

@@ -1,9 +1,26 @@
+import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Share } from '@capacitor/share';
 import {
 	IonButton,
 } from '@ionic/react';
 
-function Tab1Page() {
+const propTypes = {
+	onRenderToolbarTitle: PropTypes.func.isRequired,
+};
+
+function Tab1Page({
+	onRenderToolbarTitle,
+}) {
+
+	useEffect(() => {
+		onRenderToolbarTitle((
+			<div>Tab1Page</div>
+		));
+
+	}, [onRenderToolbarTitle]);
+
+
 	const share = async () => {
 		await Share.share({
 			title: 'Simons YT Channel',
@@ -49,5 +66,7 @@ function Tab1Page() {
 		</>
 	);
 }
+
+Tab1Page.propTypes = propTypes;
 
 export default Tab1Page;

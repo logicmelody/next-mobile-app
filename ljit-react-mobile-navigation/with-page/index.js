@@ -28,6 +28,7 @@ function withPage(pageObject) {
 
 		const [toolbarTitleLabel, setToolbarTitleLabel] = useState('');
 		const [toolbarHeaderComponent, setToolbarHeaderComponent] = useState();
+		const [toolbarTitleComponent, setToolbarTitleComponent] = useState();
 		const [leftToolbarButtons, setLeftToolbarButtons] = useState([]);
 		const [rightToolbarButtons, setRightToolbarButtons] = useState([]);
 
@@ -57,6 +58,11 @@ function withPage(pageObject) {
 
 		const memoizedOnRenderToolbarHeader = useCallback((component) => {
 			setToolbarHeaderComponent(component);
+
+		}, []);
+
+		const memoizedOnRenderToolbarTitle = useCallback((component) => {
+			setToolbarTitleComponent(component);
 
 		}, []);
 
@@ -143,6 +149,7 @@ function withPage(pageObject) {
 			return (
 				<Header
 					title={toolbarTitleLabel || navigationTitle || title}
+					titleComponent={toolbarTitleComponent}
 					headerComponent={toolbarHeaderComponent}
 					hasBackButton={hasBackButton}
 					leftToolbarButtons={leftToolbarButtons}
@@ -161,6 +168,7 @@ function withPage(pageObject) {
 						onNavigate={_handleOnNavigate}
 						onBack={_handleOnBack}
 						onRenderToolbarHeader={memoizedOnRenderToolbarHeader}
+						onRenderToolbarTitle={memoizedOnRenderToolbarTitle}
 						onRenderToolbarTitleLabel={memoizedOnRenderToolbarTitleLabel}
 						onRenderLeftToolbarButtons={memoizedOnRenderLeftToolbarButtons}
 						onRenderRightToolbarButtons={memoizedOnRenderRightToolbarButtons}
