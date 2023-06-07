@@ -15,11 +15,13 @@ import { ToolbarButton } from '../../ljit-react-mobile-navigation';
 
 import {
 	StyledMenuButton,
+	StyledMenuDButton,
 } from './styles';
 
 const propTypes = {
 	setOnNavigatorEvent: PropTypes.func.isRequired,
 	onChangeNavigationTitle: PropTypes.func.isRequired,
+	onRenderLeftToolbarButtons: PropTypes.func.isRequired,
 	onRenderRightToolbarButtons: PropTypes.func.isRequired,
 };
 
@@ -33,6 +35,7 @@ All the lifecycle methods in React (componentDidMount, componentWillUnmount, etc
 function Tab2Page({
 	setOnNavigatorEvent,
 	onChangeNavigationTitle,
+	onRenderLeftToolbarButtons,
 	onRenderRightToolbarButtons,
 }) {
 	const [count, setCount] = useState(0);
@@ -94,6 +97,27 @@ function Tab2Page({
 		});
 
 	}, [setOnNavigatorEvent, count]);
+
+	useEffect(() => {
+		let buttons = [];
+
+		buttons.push((
+			<StyledMenuDButton
+				key='d'
+				onClick={() => {
+					console.log('Click D');
+
+					setCount(count + 10);
+				}}
+			>
+				D
+			</StyledMenuDButton>
+		));
+
+		onRenderLeftToolbarButtons(buttons);
+
+	}, [onRenderLeftToolbarButtons, count]);
+
 
 	useEffect(() => {
 		let buttons = [];

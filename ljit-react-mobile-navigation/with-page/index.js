@@ -19,17 +19,6 @@ import Header from './header';
 
 		// Optional
 		hasHeader: true / false,
-
-		toolbarButtons: {
-			leftButtons: [
-				{
-					id: 'wallet',
-					component: (自己定義要 render 的 component)
-				}
-			],
-
-			rightButtons: [],
-		},
 	}
 */
 function withPage(pageObject) {
@@ -39,6 +28,7 @@ function withPage(pageObject) {
 
 		const [_navigationTitle, setNavigationTitle] = useState('');
 		const [toolbarHeaderComponent, setToolbarHeaderComponent] = useState();
+		const [leftToolbarButtons, setLeftToolbarButtons] = useState([]);
 		const [rightToolbarButtons, setRightToolbarButtons] = useState([]);
 
 		const {
@@ -46,7 +36,6 @@ function withPage(pageObject) {
 			component: PageComponent,
 			hasBackButton = true,
 			hasHeader = true,
-			toolbarButtons = {},
 		} = pageObject;
 
 		const {
@@ -68,6 +57,11 @@ function withPage(pageObject) {
 
 		const memoizedOnRenderToolbarHeader = useCallback((component) => {
 			setToolbarHeaderComponent(component);
+
+		}, []);
+
+		const memoizedOnRenderLeftToolbarButtons = useCallback((buttons) => {
+			setLeftToolbarButtons(buttons);
 
 		}, []);
 
@@ -147,7 +141,7 @@ function withPage(pageObject) {
 					title={_navigationTitle || title}
 					headerComponent={toolbarHeaderComponent}
 					hasBackButton={hasBackButton}
-					toolbarButtons={toolbarButtons}
+					leftToolbarButtons={leftToolbarButtons}
 					rightToolbarButtons={rightToolbarButtons}
 					onClickTitle={() => {
 						_handleNavigatorEvent('on-click-title');
@@ -172,6 +166,7 @@ function withPage(pageObject) {
 							setNavigationTitle(title);
 						}}
 						onRenderToolbarHeader={memoizedOnRenderToolbarHeader}
+						onRenderLeftToolbarButtons={memoizedOnRenderLeftToolbarButtons}
 						onRenderRightToolbarButtons={memoizedOnRenderRightToolbarButtons}
 						{...props}
 						{...routeOptions}

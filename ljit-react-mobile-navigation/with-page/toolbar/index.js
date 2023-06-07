@@ -12,7 +12,7 @@ const propTypes = {
 	navigationTitle: PropTypes.string,
 	title: PropTypes.string,
 	hasBackButton: PropTypes.bool,
-	toolbarButtons: PropTypes.object,
+	leftToolbarButtons: PropTypes.array,
 	rightToolbarButtons: PropTypes.array,
 	onClickButton: PropTypes.func,
 };
@@ -21,7 +21,7 @@ const defaultProps = {
 	navigationTitle: '',
 	title: '',
 	hasBackButton: true,
-	toolbarButtons: {},
+	leftToolbarButtons: [],
 	rightToolbarButtons: [],
 	onClickButton: () => {},
 };
@@ -30,21 +30,15 @@ function Toolbar({
 	navigationTitle,
 	title,
 	hasBackButton,
-	toolbarButtons,
+	leftToolbarButtons,
 	rightToolbarButtons,
 	onClickButton,
 }) {
-	const {
-		leftButtons = [],
-		rightButtons = [],
-	} = toolbarButtons;
-
 	return (
 		<IonToolbar>
 			<LeftButtons
 				hasBackButton={hasBackButton}
-				data={leftButtons}
-				onClickButton={onClickButton}
+				data={leftToolbarButtons}
 			/>
 
 			<IonTitle>

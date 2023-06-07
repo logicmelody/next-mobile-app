@@ -1,12 +1,6 @@
-import {
-	IonButton,
-} from '@ionic/react';
-
 import { registerPage } from '../../ljit-react-mobile-navigation';
 
 import { NavigationKeyEnums } from '../';
-
-import MobileMenuItemDButton from '../../components/mobile-menu-item-d-button';
 
 import Tab1 from '../../page-components/tab1';
 import Tab2 from '../../page-components/tab2';
@@ -33,14 +27,6 @@ registerPage(TAB2, {
 	component: Tab2,
 	title: 'TAB2',
 	hasBackButton: false,
-	toolbarButtons: {
-		leftButtons: [
-			{
-				id: 'd',
-				component: <MobileMenuItemDButton />,
-			},
-		],
-	},
 });
 
 registerPage(TAB3, {
