@@ -11,6 +11,8 @@ import {
 	camera,
 } from 'ionicons/icons';
 
+import { ToolbarButton } from '../../ljit-react-mobile-navigation';
+
 import {
 	StyledMenuButton,
 } from './styles';
@@ -97,7 +99,7 @@ function Tab2Page({
 		let buttons = [];
 
 		buttons.push((
-			<IonButton
+			<ToolbarButton
 				key='add-2'
 				onClick={() => {
 					console.log('Click add-2');
@@ -106,12 +108,12 @@ function Tab2Page({
 				}}
 			>
 				Add 2
-			</IonButton>
+			</ToolbarButton>
 		));
 
 		if (hasAdd3ToolbarButton) {
 			buttons.push((
-				<IonButton
+				<ToolbarButton
 					key='add-3'
 					onClick={() => {
 						console.log('Click add-3');
@@ -120,7 +122,7 @@ function Tab2Page({
 					}}
 				>
 					Add 3
-				</IonButton>
+				</ToolbarButton>
 			));
 		}
 

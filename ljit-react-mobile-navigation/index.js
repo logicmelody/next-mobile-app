@@ -6,6 +6,7 @@ import {
 } from '@ionic/react';
 
 import TabsApp from './tabs-app';
+import ToolbarButton from './toolbar-button';
 
 import {
 	registerPage,
@@ -82,4 +83,5 @@ function startApp({
 export {
 	startApp,
 	registerPage,
+	ToolbarButton,
 };
