@@ -145,7 +145,7 @@ function withPage(pageObject) {
 				<Header
 					navigationTitle={navigationTitle}
 					title={_navigationTitle || title}
-					HeaderComponent={toolbarHeaderComponent}
+					headerComponent={toolbarHeaderComponent}
 					hasBackButton={hasBackButton}
 					toolbarButtons={toolbarButtons}
 					rightToolbarButtons={rightToolbarButtons}

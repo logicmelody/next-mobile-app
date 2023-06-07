@@ -11,7 +11,7 @@ const propTypes = {
 	hasBackButton: PropTypes.bool,
 	toolbarButtons: PropTypes.object,
 	rightToolbarButtons: PropTypes.array,
-	HeaderComponent: PropTypes.element,
+	headerComponent: PropTypes.element,
 	onClickTitle: PropTypes.func,
 	onClickButton: PropTypes.func,
 };
@@ -32,13 +32,13 @@ function Header({
 	hasBackButton,
 	toolbarButtons,
 	rightToolbarButtons,
-	HeaderComponent,
+	headerComponent,
 	onClickTitle,
 	onClickButton,
 }) {
 	function _renderContent() {
-		if (HeaderComponent) {
-			return HeaderComponent;
+		if (headerComponent) {
+			return headerComponent;
 		}
 	
 		return (
