@@ -12,7 +12,6 @@ const propTypes = {
 	leftToolbarButtons: PropTypes.array,
 	rightToolbarButtons: PropTypes.array,
 	headerComponent: PropTypes.element,
-	onClickTitle: PropTypes.func,
 	onClickButton: PropTypes.func,
 };
 
@@ -22,7 +21,6 @@ const defaultProps = {
 	hasBackButton: true,
 	leftToolbarButtons: [],
 	rightToolbarButtons: [],
-	onClickTitle: () => {},
 	onClickButton: () => {},
 };
 
@@ -33,7 +31,6 @@ function Header({
 	leftToolbarButtons,
 	rightToolbarButtons,
 	headerComponent,
-	onClickTitle,
 	onClickButton,
 }) {
 	function _renderContent() {
