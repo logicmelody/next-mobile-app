@@ -30,18 +30,6 @@ function Toolbar({
 	leftToolbarButtons,
 	rightToolbarButtons,
 }) {
-	function _renderTitle() {
-		if (titleComponent) {
-			return titleComponent;
-		}
-
-		return (
-			<IonTitle>
-				{title}
-			</IonTitle>
-		);
-	}
-
 	return (
 		<IonToolbar>
 			<LeftButtons
@@ -49,7 +37,9 @@ function Toolbar({
 				data={leftToolbarButtons}
 			/>
 
-			{_renderTitle()}
+			<IonTitle>
+				{titleComponent || title}
+			</IonTitle>
 
 			<RightButtons
 				data={rightToolbarButtons}

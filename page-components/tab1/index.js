@@ -15,11 +15,14 @@ function Tab1Page({
 
 	useEffect(() => {
 		onRenderToolbarTitle((
-			<div>Tab1Page</div>
+			<IonButton onClick={() => {
+				console.log('Click Tab1Page Title');
+			}}>
+				Tab1Page Title
+			</IonButton>
 		));
 
 	}, [onRenderToolbarTitle]);
-
 
 	const share = async () => {
 		await Share.share({
