@@ -20,7 +20,7 @@ import {
 
 const propTypes = {
 	setOnNavigatorEvent: PropTypes.func.isRequired,
-	onChangeNavigationTitle: PropTypes.func.isRequired,
+	onRenderToolbarTitleLabel: PropTypes.func.isRequired,
 	onRenderLeftToolbarButtons: PropTypes.func.isRequired,
 	onRenderRightToolbarButtons: PropTypes.func.isRequired,
 };
@@ -34,7 +34,7 @@ All the lifecycle methods in React (componentDidMount, componentWillUnmount, etc
 */
 function Tab2Page({
 	setOnNavigatorEvent,
-	onChangeNavigationTitle,
+	onRenderToolbarTitleLabel,
 	onRenderLeftToolbarButtons,
 	onRenderRightToolbarButtons,
 }) {
@@ -173,7 +173,7 @@ function Tab2Page({
 			</IonButton>
 
 			<IonButton onClick={() => {
-				onChangeNavigationTitle('Tab2 測試')
+				onRenderToolbarTitleLabel('Tab2 測試')
 			}}>
 				Change Title
 			</IonButton>

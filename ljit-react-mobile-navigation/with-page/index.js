@@ -26,7 +26,7 @@ function withPage(pageObject) {
 		const router = useIonRouter();
 		const onNavigatorEvent = useRef();
 
-		const [_navigationTitle, setNavigationTitle] = useState('');
+		const [toolbarTitleLabel, setToolbarTitleLabel] = useState('');
 		const [toolbarHeaderComponent, setToolbarHeaderComponent] = useState();
 		const [leftToolbarButtons, setLeftToolbarButtons] = useState([]);
 		const [rightToolbarButtons, setRightToolbarButtons] = useState([]);
@@ -57,6 +57,11 @@ function withPage(pageObject) {
 
 		const memoizedOnRenderToolbarHeader = useCallback((component) => {
 			setToolbarHeaderComponent(component);
+
+		}, []);
+
+		const memoizedOnRenderToolbarTitleLabel = useCallback((label) => {
+			setToolbarTitleLabel(label);
 
 		}, []);
 
@@ -138,7 +143,7 @@ function withPage(pageObject) {
 			return (
 				<Header
 					navigationTitle={navigationTitle}
-					title={_navigationTitle || title}
+					title={toolbarTitleLabel || title}
 					headerComponent={toolbarHeaderComponent}
 					hasBackButton={hasBackButton}
 					leftToolbarButtons={leftToolbarButtons}
@@ -156,10 +161,8 @@ function withPage(pageObject) {
 						setOnNavigatorEvent={memoizedSetOnNavigatorEvent}
 						onNavigate={_handleOnNavigate}
 						onBack={_handleOnBack}
-						onChangeNavigationTitle={(title) => {
-							setNavigationTitle(title);
-						}}
 						onRenderToolbarHeader={memoizedOnRenderToolbarHeader}
+						onRenderToolbarTitleLabel={memoizedOnRenderToolbarTitleLabel}
 						onRenderLeftToolbarButtons={memoizedOnRenderLeftToolbarButtons}
 						onRenderRightToolbarButtons={memoizedOnRenderRightToolbarButtons}
 						{...props}
