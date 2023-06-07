@@ -6,7 +6,6 @@ import {
 import Toolbar from '../toolbar';
 
 const propTypes = {
-	navigationTitle: PropTypes.string,
 	title: PropTypes.string,
 	hasBackButton: PropTypes.bool,
 	leftToolbarButtons: PropTypes.array,
@@ -15,7 +14,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-	navigationTitle: '',
 	title: '',
 	hasBackButton: true,
 	leftToolbarButtons: [],
@@ -23,7 +21,6 @@ const defaultProps = {
 };
 
 function Header({
-	navigationTitle,
 	title,
 	hasBackButton,
 	leftToolbarButtons,
@@ -37,7 +34,6 @@ function Header({
 	
 		return (
 			<Toolbar
-				navigationTitle={navigationTitle}
 				title={title}
 				hasBackButton={hasBackButton}
 				leftToolbarButtons={leftToolbarButtons}
