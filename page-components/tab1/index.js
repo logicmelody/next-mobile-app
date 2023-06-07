@@ -12,7 +12,6 @@ const propTypes = {
 function Tab1Page({
 	onRenderToolbarTitle,
 }) {
-
 	useEffect(() => {
 		onRenderToolbarTitle((
 			<IonButton onClick={() => {
