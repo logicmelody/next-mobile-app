@@ -11,7 +11,6 @@ import {
 	camera,
 } from 'ionicons/icons';
 
-import Add2Button from './add-2-button';
 import {
 	StyledMenuButton,
 } from './styles';
@@ -35,6 +34,8 @@ function Tab2Page({
 	onRenderRightToolbarButtons,
 }) {
 	const [count, setCount] = useState(0);
+	const [hasAdd3ToolbarButton, setHasAdd3ToolbarButton] = useState(true);
+	const [hasAdd5ToolbarButton, setHasAdd5ToolbarButton] = useState(true);
 
 	useEffect(() => {
 		console.log('Tab2Page didMount');
@@ -93,18 +94,23 @@ function Tab2Page({
 	}, [setOnNavigatorEvent, count]);
 
 	useEffect(() => {
-		onRenderRightToolbarButtons([
-			(
-				<Add2Button
-					key='add-2'
-					onClick={() => {
-						console.log('Click add-2');
+		let buttons = [];
 
-						setCount(count + 2);
-					}}
-				/>
-			),
-			(
+		buttons.push((
+			<IonButton
+				key='add-2'
+				onClick={() => {
+					console.log('Click add-2');
+
+					setCount(count + 2);
+				}}
+			>
+				Add 2
+			</IonButton>
+		));
+
+		if (hasAdd3ToolbarButton) {
+			buttons.push((
 				<IonButton
 					key='add-3'
 					onClick={() => {
@@ -115,20 +121,27 @@ function Tab2Page({
 				>
 					Add 3
 				</IonButton>
-			),
-			(
+			));
+		}
+
+		if (hasAdd5ToolbarButton) {
+			buttons.push((
 				<StyledMenuButton
 					key='add-5'
 					onClick={() => {
+						console.log('Click add-5');
+
 						setCount(count + 5);
 					}}
 				>
 					5
 				</StyledMenuButton>
-			),
-		]);
+			));
+		}
 
-	}, [onRenderRightToolbarButtons, count]);
+		onRenderRightToolbarButtons(buttons);
+
+	}, [onRenderRightToolbarButtons, count, hasAdd3ToolbarButton, hasAdd5ToolbarButton]);
 
 	return (
 		<>
@@ -157,18 +170,8 @@ function Tab2Page({
 			</IonButton>
 
 			<IonButton onClick={() => {
-				onRenderRightToolbarButtons([
-					(
-						<Add2Button
-							key='add-2'
-							onClick={() => {
-								console.log('Click add-2');
-
-								setCount(count + 2);
-							}}
-						/>
-					),
-				]);
+				setHasAdd3ToolbarButton(false);
+				setHasAdd5ToolbarButton(false);
 			}}>
 				Change right Toolbar buttons
 			</IonButton>
