@@ -7,24 +7,13 @@ import {
 	IonTabBar,
 	IonTabButton,
 	IonTabs,
-	IonButton,
 	useIonRouter,
 } from '@ionic/react';
 import {
 	triangle,
-	square,
 } from 'ionicons/icons';
 
-import { NavigationKeyEnums } from '../../navigation';
-
 import { getPage } from '../register';
-
-const {
-	TAB1,
-	TAB2,
-	TAB3,
-	TAB4,
-} = NavigationKeyEnums;
 
 function TabsApp({
 	tabs,
