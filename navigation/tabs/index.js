@@ -40,24 +40,6 @@ registerPage(TAB2, {
 				component: <MobileMenuItemDButton />,
 			},
 		],
-		rightButtons: [
-			{
-				id: 'end-1',
-				component: (
-					<IonButton>
-						end 1
-					</IonButton>
-				),
-			},
-			{
-				id: 'end-2',
-				component: (
-					<IonButton>
-						end 2
-					</IonButton>
-				),
-			},
-		],
 	},
 });
 

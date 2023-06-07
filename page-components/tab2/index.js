@@ -11,11 +11,6 @@ import {
 	camera,
 } from 'ionicons/icons';
 
-import {
-	StyledMenuButton,
-	StyledMenuTitle,
-} from './styles';
-
 import { NavigationKeyEnums } from '../../navigation';
 
 const {
@@ -25,6 +20,7 @@ const {
 const propTypes = {
 	setOnNavigatorEvent: PropTypes.func.isRequired,
 	onChangeNavigationTitle: PropTypes.func.isRequired,
+	onRenderRightToolbarButtons: PropTypes.func.isRequired,
 };
 
 /*
@@ -37,6 +33,7 @@ All the lifecycle methods in React (componentDidMount, componentWillUnmount, etc
 function Tab2Page({
 	setOnNavigatorEvent,
 	onChangeNavigationTitle,
+	onRenderRightToolbarButtons,
 }) {
 	const [count, setCount] = useState(0);
 
@@ -95,6 +92,36 @@ function Tab2Page({
 		});
 
 	}, [setOnNavigatorEvent, count]);
+
+	useEffect(() => {
+		onRenderRightToolbarButtons([
+			(
+				<IonButton
+					key='add-2'
+					onClick={() => {
+						console.log('Click add-2');
+
+						setCount(count + 2);
+					}}
+				>
+					Add 2
+				</IonButton>
+			),
+			(
+				<IonButton
+					key='add-3'
+					onClick={() => {
+						console.log('Click add-3');
+
+						setCount(count + 3);
+					}}
+				>
+					Add 3
+				</IonButton>
+			),
+		]);
+
+	}, [onRenderRightToolbarButtons, count]);
 
 	return (
 		<>

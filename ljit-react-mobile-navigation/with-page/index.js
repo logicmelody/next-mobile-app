@@ -39,6 +39,7 @@ function withPage(pageObject) {
 
 		const [_navigationTitle, setNavigationTitle] = useState('');
 		const [toolbarHeaderComponent, setToolbarHeaderComponent] = useState();
+		const [rightToolbarButtons, setRightToolbarButtons] = useState([]);
 
 		const {
 			title,
@@ -67,6 +68,11 @@ function withPage(pageObject) {
 
 		const memoizedOnRenderToolbarHeader = useCallback((component) => {
 			setToolbarHeaderComponent(component);
+
+		}, []);
+
+		const memoizedOnRenderRightToolbarButtons = useCallback((buttons) => {
+			setRightToolbarButtons(buttons);
 
 		}, []);
 
@@ -142,6 +148,7 @@ function withPage(pageObject) {
 					HeaderComponent={toolbarHeaderComponent}
 					hasBackButton={hasBackButton}
 					toolbarButtons={toolbarButtons}
+					rightToolbarButtons={rightToolbarButtons}
 					onClickTitle={() => {
 						_handleNavigatorEvent('on-click-title');
 					}}
@@ -165,6 +172,7 @@ function withPage(pageObject) {
 							setNavigationTitle(title);
 						}}
 						onRenderToolbarHeader={memoizedOnRenderToolbarHeader}
+						onRenderRightToolbarButtons={memoizedOnRenderRightToolbarButtons}
 						{...props}
 						{...routeOptions}
 					/>
