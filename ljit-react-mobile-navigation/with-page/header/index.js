@@ -12,7 +12,6 @@ const propTypes = {
 	leftToolbarButtons: PropTypes.array,
 	rightToolbarButtons: PropTypes.array,
 	headerComponent: PropTypes.element,
-	onClickButton: PropTypes.func,
 };
 
 const defaultProps = {
@@ -21,7 +20,6 @@ const defaultProps = {
 	hasBackButton: true,
 	leftToolbarButtons: [],
 	rightToolbarButtons: [],
-	onClickButton: () => {},
 };
 
 function Header({
@@ -31,7 +29,6 @@ function Header({
 	leftToolbarButtons,
 	rightToolbarButtons,
 	headerComponent,
-	onClickButton,
 }) {
 	function _renderContent() {
 		if (headerComponent) {
@@ -45,7 +42,6 @@ function Header({
 				hasBackButton={hasBackButton}
 				leftToolbarButtons={leftToolbarButtons}
 				rightToolbarButtons={rightToolbarButtons}
-				onClickButton={onClickButton}
 			/>
 		);
 	}

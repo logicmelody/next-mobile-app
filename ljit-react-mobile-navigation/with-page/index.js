@@ -143,9 +143,6 @@ function withPage(pageObject) {
 					hasBackButton={hasBackButton}
 					leftToolbarButtons={leftToolbarButtons}
 					rightToolbarButtons={rightToolbarButtons}
-					onClickButton={(id) => {
-						_handleNavigatorEvent(id);
-					}}
 				/>
 			);
 		}

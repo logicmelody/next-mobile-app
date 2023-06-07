@@ -14,7 +14,6 @@ const propTypes = {
 	hasBackButton: PropTypes.bool,
 	leftToolbarButtons: PropTypes.array,
 	rightToolbarButtons: PropTypes.array,
-	onClickButton: PropTypes.func,
 };
 
 const defaultProps = {
@@ -23,7 +22,6 @@ const defaultProps = {
 	hasBackButton: true,
 	leftToolbarButtons: [],
 	rightToolbarButtons: [],
-	onClickButton: () => {},
 };
 
 function Toolbar({
@@ -32,7 +30,6 @@ function Toolbar({
 	hasBackButton,
 	leftToolbarButtons,
 	rightToolbarButtons,
-	onClickButton,
 }) {
 	return (
 		<IonToolbar>
@@ -47,7 +44,6 @@ function Toolbar({
 
 			<RightButtons
 				data={rightToolbarButtons}
-				onClickButton={onClickButton}
 			/>
 		</IonToolbar>
 	);
