@@ -11,6 +11,7 @@ import {
 	camera,
 } from 'ionicons/icons';
 
+import Add2Button from './add-2-button';
 import {
 	StyledMenuButton,
 } from './styles';
@@ -94,16 +95,14 @@ function Tab2Page({
 	useEffect(() => {
 		onRenderRightToolbarButtons([
 			(
-				<IonButton
+				<Add2Button
 					key='add-2'
 					onClick={() => {
 						console.log('Click add-2');
 
 						setCount(count + 2);
 					}}
-				>
-					Add 2
-				</IonButton>
+				/>
 			),
 			(
 				<IonButton
