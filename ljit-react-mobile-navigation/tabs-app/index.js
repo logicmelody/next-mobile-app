@@ -64,7 +64,10 @@ function TabsApp({
 				{_renderRoutes()}
 			</IonRouterOutlet>
 
-			<IonTabBar slot='bottom'>
+			<IonTabBar
+				slot='bottom'
+				mode='ios'
+			>
 				<IonTabButton tab='tab1' href={TAB1}>
 					<IonIcon aria-hidden='true' icon={triangle} />
 					<IonLabel>
