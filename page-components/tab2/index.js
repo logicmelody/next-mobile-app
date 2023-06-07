@@ -156,6 +156,23 @@ function Tab2Page({
 				Change Title
 			</IonButton>
 
+			<IonButton onClick={() => {
+				onRenderRightToolbarButtons([
+					(
+						<Add2Button
+							key='add-2'
+							onClick={() => {
+								console.log('Click add-2');
+
+								setCount(count + 2);
+							}}
+						/>
+					),
+				]);
+			}}>
+				Change right Toolbar buttons
+			</IonButton>
+
 			<h1>Test</h1>
 			<h1>Test</h1>
 			<h1>Test</h1>
