@@ -74,23 +74,6 @@ function Tab2Page({
 
 					break;
 
-				case 'd':
-					console.log('Tab2Page d');
-
-					setCount(count + 1);
-
-					break;
-
-				case 'end-1':
-					console.log('Tab2Page end-1');
-
-					break;
-
-				case 'end-2':
-					console.log('Tab2Page end-2');
-
-					break;
-
 				default:
 					break;
 			}
