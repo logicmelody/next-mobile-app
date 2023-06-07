@@ -79,7 +79,7 @@ function Tab2Page({
 			}
 		});
 
-	}, [setOnNavigatorEvent, count]);
+	}, [setOnNavigatorEvent]);
 
 	useEffect(() => {
 		let buttons = [];
