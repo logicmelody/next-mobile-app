@@ -31,7 +31,7 @@ function Toolbar({
 	rightToolbarButtons,
 }) {
 	return (
-		<IonToolbar>
+		<IonToolbar mode='ios'>
 			<LeftButtons
 				hasBackButton={hasBackButton}
 				data={leftToolbarButtons}
