@@ -11,6 +11,10 @@ import {
 	camera,
 } from 'ionicons/icons';
 
+import {
+	StyledMenuButton,
+} from './styles';
+
 const propTypes = {
 	setOnNavigatorEvent: PropTypes.func.isRequired,
 	onChangeNavigationTitle: PropTypes.func.isRequired,
@@ -112,6 +116,16 @@ function Tab2Page({
 				>
 					Add 3
 				</IonButton>
+			),
+			(
+				<StyledMenuButton
+					key='add-5'
+					onClick={() => {
+						setCount(count + 5);
+					}}
+				>
+					5
+				</StyledMenuButton>
 			),
 		]);
 
