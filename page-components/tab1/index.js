@@ -1,9 +1,16 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import Image from 'next/image';
 import { Share } from '@capacitor/share';
 import {
 	IonButton,
 } from '@ionic/react';
+
+import {
+	StyledTopContainer,
+} from './styles';
+
+import NextImage from '../../public/images/next.svg';
 
 const propTypes = {
 	onRenderToolbarTitle: PropTypes.func.isRequired,
@@ -36,19 +43,23 @@ function Tab1Page({
 
 	return (
 		<>
-			{/* <IonHeader collapse='condense'>
-					<IonToolbar>
-						<IonTitle size='large'>Tab 12323</IonTitle>
-					</IonToolbar>
-				</IonHeader> */}
+			<StyledTopContainer>
+				<IonButton onClick={() => {
+					share();
+				}}>
+					Share
+				</IonButton>
 
-			<IonButton onClick={() => {
-				share();
-			}}>
-				Share
-			</IonButton>
+				<Image
+					src={NextImage}
+					width='64'
+					height='64'
+					alt='Picture of the author'
+				/>
 
-			<h1>Test top</h1>
+				<h1>Test top</h1>
+			</StyledTopContainer>
+
 			<h1>Test</h1>
 			<h1>Test</h1>
 			<h1>Test</h1>
