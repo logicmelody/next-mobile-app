@@ -1,4 +1,4 @@
-import { registerPage } from '../../ljit-react-mobile-navigation';
+import { registerPage } from '../../ibear-react-mobile-navigation';
 
 import { NavigationKeyEnums } from '../';
 

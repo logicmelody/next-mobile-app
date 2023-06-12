@@ -1,4 +1,4 @@
-import { startApp } from '../../ljit-react-mobile-navigation';
+import { startApp } from '../../ibear-react-mobile-navigation';
 
 import Tabs from '../../navigation/tabs';
 import Pages from '../../navigation/pages';

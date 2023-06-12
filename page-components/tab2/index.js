@@ -11,7 +11,7 @@ import {
 	camera,
 } from 'ionicons/icons';
 
-import { ToolbarButton } from '../../ljit-react-mobile-navigation';
+import { ToolbarButton } from '../../ibear-react-mobile-navigation';
 
 import {
 	StyledMenuButton,
