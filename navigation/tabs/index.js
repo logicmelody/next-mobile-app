@@ -9,6 +9,8 @@ import Tab2 from '../../page-components/tab2';
 import Tab3 from '../../page-components/tab3';
 import Tab4 from '../../page-components/tab4';
 
+import Tab2TabIcon from '../../components/tab2-tab-icon';
+
 import BookImage from '../../public/images/book.svg';
 import BookSelectedImage from '../../public/images/book-selected.svg';
 
@@ -45,6 +47,14 @@ registerPage(TAB1, {
 
 registerPage(TAB2, {
 	tabLebal: 'TAB2',
+	tabIcon: (
+		<Tab2TabIcon />
+	),
+	selectedTabIcon: (
+		<Tab2TabIcon
+			isSelected
+		/>
+	),
 	component: Tab2,
 	title: 'TAB2',
 	hasBackButton: false,
