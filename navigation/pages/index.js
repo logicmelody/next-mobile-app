@@ -16,6 +16,7 @@ const {
 	THIRD_PARTY_GAMES,
 } = NavigationKeyEnums;
 
+// 註冊 page
 registerPage(LAYOUT_ROUTE, {
 	component: LayoutRoute,
 });
@@ -40,6 +41,7 @@ registerPage(THIRD_PARTY_GAMES, {
 	title: 'THIRD_PARTY_GAMES',
 });
 
+// 要把所有會作用 page 的 route 宣告成一個 array
 const Pages = [
 	LAYOUT_ROUTE,
 	LOGIN,

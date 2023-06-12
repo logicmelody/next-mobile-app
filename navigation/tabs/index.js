@@ -22,6 +22,7 @@ const {
 	TAB4,
 } = NavigationKeyEnums;
 
+// 註冊 tab
 registerPage(TAB1, {
 	tabLabel: 'TAB1',
 	tabIcon: (
@@ -75,8 +76,12 @@ registerPage(TAB4, {
 	hasHeader: false,
 });
 
+
 const Tabs = {
+	// tab 的 root route 路徑
 	path: TABS,
+
+	// 要把所有會作用 tab 的 route 宣告成一個 array
 	tabPages: [
 		TAB1,
 		TAB2,
