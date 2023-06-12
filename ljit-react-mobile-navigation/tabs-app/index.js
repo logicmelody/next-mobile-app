@@ -63,7 +63,7 @@ function TabsApp({
 				>
 					<IonIcon aria-hidden='true' icon={triangle} />
 					<IonLabel>
-						{`${tabLebal} ${tab === pathname ? 'Selected' : ''}`}
+						{tabLebal}
 					</IonLabel>
 				</IonTabButton>
 			);
