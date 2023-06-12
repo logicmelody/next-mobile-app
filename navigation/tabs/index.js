@@ -9,8 +9,8 @@ import Tab2 from '../../page-components/tab2';
 import Tab3 from '../../page-components/tab3';
 import Tab4 from '../../page-components/tab4';
 
-import NextImage from '../../public/images/next.svg';
-import FaviconImage from '../../public/images/favicon.ico';
+import BookImage from '../../public/images/book.svg';
+import BookSelectedImage from '../../public/images/book-selected.svg';
 
 const {
 	TABS,
@@ -24,16 +24,16 @@ registerPage(TAB1, {
 	tabLebal: 'TAB1',
 	tabIcon: (
 		<Image
-			src={NextImage}
-			alt="Picture of the author"
+			src={BookImage}
+			alt='book-tab'
 			width={30}
 			height={30}
 		/>
 	),
 	selectedTabIcon: (
 		<Image
-			src={FaviconImage}
-			alt="Picture of the author"
+			src={BookSelectedImage}
+			alt='book-selected-tab'
 			width={30}
 			height={30}
 		/>
