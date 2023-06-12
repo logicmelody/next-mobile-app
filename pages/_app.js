@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { setupIonicReact } from '@ionic/react';
 
+import MobileApp from '../page-components/app';
 import NonSSRWrapper from '../components/non-ssr-wrapper';
 
 import TestProvider from '../lib/test-provider';
@@ -34,7 +35,8 @@ export default function App({ Component, pageProps }) {
 
 			<TestProvider>
 				<NonSSRWrapper>
-					<Component {...pageProps} />
+					{/* <Component {...pageProps} /> */}
+					<MobileApp />
 				</NonSSRWrapper>
 			</TestProvider>
 		</>
