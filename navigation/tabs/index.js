@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { registerPage } from '../../ljit-react-mobile-navigation';
 
 import { NavigationKeyEnums } from '../';
@@ -6,6 +8,9 @@ import Tab1 from '../../page-components/tab1';
 import Tab2 from '../../page-components/tab2';
 import Tab3 from '../../page-components/tab3';
 import Tab4 from '../../page-components/tab4';
+
+import NextImage from '../../public/images/next.svg';
+import FaviconImage from '../../public/images/favicon.ico';
 
 const {
 	TABS,
@@ -17,6 +22,22 @@ const {
 
 registerPage(TAB1, {
 	tabLebal: 'TAB1',
+	tabIcon: (
+		<Image
+			src={NextImage}
+			alt="Picture of the author"
+			width={30}
+			height={30}
+		/>
+	),
+	selectedTabIcon: (
+		<Image
+			src={FaviconImage}
+			alt="Picture of the author"
+			width={30}
+			height={30}
+		/>
+	),
 	component: Tab1,
 	title: 'TAB1',
 	hasBackButton: false,

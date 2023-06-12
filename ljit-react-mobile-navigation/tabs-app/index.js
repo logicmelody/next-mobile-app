@@ -53,6 +53,8 @@ function TabsApp({
 
 			const {
 				tabLebal,
+				tabIcon,
+				selectedTabIcon,
 			} = page;
 
 			return (
@@ -61,7 +63,8 @@ function TabsApp({
 					tab={tab}
 					href={tab}
 				>
-					<IonIcon aria-hidden='true' icon={triangle} />
+					{tab === pathname ? selectedTabIcon : tabIcon}
+
 					<IonLabel>
 						{tabLebal}
 					</IonLabel>
