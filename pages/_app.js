@@ -2,6 +2,8 @@ import Head from 'next/head';
 import { setupIonicReact } from '@ionic/react';
 
 import MobileApp from '../page-components/app';
+
+// 要使用 Ionic 的元件，必須要把 SSR 關掉	
 import NonSSRWrapper from '../components/non-ssr-wrapper';
 
 import TestProvider from '../lib/test-provider';

@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import {
-	IonIcon,
 	IonLabel,
 	IonRouterOutlet,
 	IonTabBar,
@@ -9,9 +8,6 @@ import {
 	IonTabs,
 	useIonRouter,
 } from '@ionic/react';
-import {
-	triangle,
-} from 'ionicons/icons';
 
 import { getPage } from '../register';
 

@@ -8,23 +8,6 @@ const pageLocator = new ServiceLocator();
 		// Require
 		title,
 		component,
-
-		// Optional
-		isToolbarHidden: true / false,
-
-		toolbarButtons: {
-			leftButtons: [
-				{
-					id: 'wallet',
-					icon: 'fa-wallet', (Onsen UI 提供的 icon：FontAwesome Ionicons MaterialDesignIconicFont)
-					component: (自己定義要 render 的 component)
-				}
-			],
-
-			rightButtons: [
-
-			],
-		},
 	}
 */
 export function registerPage(path, pageObject) {
