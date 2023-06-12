@@ -48,7 +48,7 @@ function TabsApp({
 			const page = getPage(tab);
 
 			const {
-				tabLebal,
+				tabLabel,
 				tabIcon,
 				selectedTabIcon,
 			} = page;
@@ -62,7 +62,7 @@ function TabsApp({
 					{tab === pathname ? selectedTabIcon : tabIcon}
 
 					<IonLabel>
-						{tabLebal}
+						{tabLabel}
 					</IonLabel>
 				</IonTabButton>
 			);

@@ -23,7 +23,7 @@ const {
 } = NavigationKeyEnums;
 
 registerPage(TAB1, {
-	tabLebal: 'TAB1',
+	tabLabel: 'TAB1',
 	tabIcon: (
 		<Image
 			src={BookImage}
@@ -46,7 +46,7 @@ registerPage(TAB1, {
 });
 
 registerPage(TAB2, {
-	tabLebal: 'TAB2',
+	tabLabel: 'TAB2',
 	tabIcon: (
 		<Tab2TabIcon />
 	),
@@ -61,14 +61,14 @@ registerPage(TAB2, {
 });
 
 registerPage(TAB3, {
-	tabLebal: 'TAB3',
+	tabLabel: 'TAB3',
 	component: Tab3,
 	title: 'TAB3',
 	hasBackButton: false,
 });
 
 registerPage(TAB4, {
-	tabLebal: 'TAB4',
+	tabLabel: 'TAB4',
 	component: Tab4,
 	title: 'TAB4',
 	hasBackButton: false,

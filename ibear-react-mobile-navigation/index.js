@@ -13,6 +13,30 @@ import {
 	getPage,
 } from './register';
 
+/*
+	PageObject = {
+		// Require
+		title, (page Toolbar 上要顯示的 title)
+		component, (page 的 component)
+
+		// Optional
+		hasBackButton, (有沒有左上角的 back button)
+	}
+*/
+
+/*
+	TabObject = {
+		// Require
+		title, (page Toolbar 上要顯示的 title)
+		component, (page 的 component)
+		tabLabel, (對應的 tab label)
+
+		// Optional
+		hasBackButton, (有沒有左上角的 back button)
+		tabIcon, (tab 要顯示 icon 的 component)
+		selectedTabIcon, (tab 要顯示 icon 的 component)
+	}
+*/
 function startApp({
 	tabs,
 	pages,

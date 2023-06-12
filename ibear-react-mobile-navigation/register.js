@@ -3,13 +3,6 @@ import ServiceLocator from 'ljit-lib/service-locator';
 
 const pageLocator = new ServiceLocator();
 
-/*
-	PageObject = {
-		// Require
-		title,
-		component,
-	}
-*/
 export function registerPage(path, pageObject) {
 	pageLocator.register(path, {
 		...pageObject,
